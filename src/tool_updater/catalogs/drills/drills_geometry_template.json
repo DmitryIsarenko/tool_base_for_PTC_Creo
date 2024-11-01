@@ -1,0 +1,23 @@
+{
+  "1.00": {
+    "tolerance": "0/-0.014",
+    "diam": 1,
+    "flute_len": 12,
+    "length": 34,
+    "edp_no": "P2385NTI0100"
+  },
+  "1.10": {
+    "tolerance": "0/-0.014",
+    "diam": 1.1,
+    "flute_len": 14,
+    "length": 36,
+    "edp_no": "P2385NTI0110"
+  },
+  "1.20": {
+    "tolerance": "0/-0.014",
+    "diam": 1.2,
+    "flute_len": 16,
+    "length": 38,
+    "edp_no": "P2385NTI0120"
+  }
+}

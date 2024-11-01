@@ -1,0 +1,128 @@
+{
+  "3.00": {
+    "tolerance": "0/-0.014",
+    "diam": 3,
+    "flute_len": 130,
+    "length": 190,
+    "edp_no": "P1692LS0300"
+  },
+  "3.50": {
+    "tolerance": "0/-0.018",
+    "diam": 3.5,
+    "flute_len": 145,
+    "length": 210,
+    "edp_no": "P1692LS0350"
+  },
+  "4.00": {
+    "tolerance": "0/-0.018",
+    "diam": 4,
+    "flute_len": 150,
+    "length": 220,
+    "edp_no": "P1692LS0400"
+  },
+  "4.50": {
+    "tolerance": "0/-0.018",
+    "diam": 4.5,
+    "flute_len": 160,
+    "length": 235,
+    "edp_no": "P1692LS0450"
+  },
+  "5.00": {
+    "tolerance": "0/-0.018",
+    "diam": 5,
+    "flute_len": 170,
+    "length": 245,
+    "edp_no": "P1692LS0500"
+  },
+  "5.50": {
+    "tolerance": "0/-0.018",
+    "diam": 5.5,
+    "flute_len": 180,
+    "length": 260,
+    "edp_no": "P1692LS0550"
+  },
+  "6.00": {
+    "tolerance": "0/-0.018",
+    "diam": 6,
+    "flute_len": 180,
+    "length": 260,
+    "edp_no": "P1692LS0600"
+  },
+  "6.50": {
+    "tolerance": "0/-0.022",
+    "diam": 6.5,
+    "flute_len": 190,
+    "length": 275,
+    "edp_no": "P1692LS0650"
+  },
+  "7.00": {
+    "tolerance": "0/-0.022",
+    "diam": 7,
+    "flute_len": 200,
+    "length": 290,
+    "edp_no": "P1692LS0700"
+  },
+  "7.50": {
+    "tolerance": "0/-0.022",
+    "diam": 7.5,
+    "flute_len": 200,
+    "length": 290,
+    "edp_no": "P1692LS0750"
+  },
+  "8.00": {
+    "tolerance": "0/-0.022",
+    "diam": 8,
+    "flute_len": 210,
+    "length": 305,
+    "edp_no": "P1692LS0800"
+  },
+  "8.50": {
+    "tolerance": "0/-0.022",
+    "diam": 8.5,
+    "flute_len": 210,
+    "length": 305,
+    "edp_no": "P1692LS0850"
+  },
+  "9.00": {
+    "tolerance": "0/-0.022",
+    "diam": 9,
+    "flute_len": 220,
+    "length": 320,
+    "edp_no": "P1692LS0900"
+  },
+  "9.50": {
+    "tolerance": "0/-0.022",
+    "diam": 9.5,
+    "flute_len": 220,
+    "length": 320,
+    "edp_no": "P1692LS0950"
+  },
+  "10.00": {
+    "tolerance": "0/-0.022",
+    "diam": 10,
+    "flute_len": 235,
+    "length": 340,
+    "edp_no": "P1692LS1000"
+  },
+  "10.50": {
+    "tolerance": "0/-0.027",
+    "diam": 10.5,
+    "flute_len": 235,
+    "length": 340,
+    "edp_no": "P1692LS1050"
+  },
+  "11.00": {
+    "tolerance": "0/-0.027",
+    "diam": 11,
+    "flute_len": 250,
+    "length": 365,
+    "edp_no": "P1692LS1100"
+  },
+  "12.00": {
+    "tolerance": "0/-0.027",
+    "diam": 12,
+    "flute_len": 260,
+    "length": 375,
+    "edp_no": "P1692LS1200"
+  }
+}
