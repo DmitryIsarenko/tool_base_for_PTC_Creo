@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/tool_renamer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/drill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tool_renamer">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="tool_base" />
       <option name="ENV_FILES" value="" />
@@ -143,8 +144,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tool_renamer" />
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.tool_renamer" />
         <item itemvalue="Python.transform_cut_data" />
       </list>
     </recent_temporary>
