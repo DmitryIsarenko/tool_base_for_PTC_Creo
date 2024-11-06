@@ -1,4 +1,4 @@
-from tool_updater.classes.drill import Drill
+from tool_updater.classes.tool_classes.axial.drill import Drill
 from tool_updater.classes.tool_generator import ToolGenerator
 
 

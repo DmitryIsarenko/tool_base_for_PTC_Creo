@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/cekovka.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/centring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/razvertka.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/zenkovka.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/disk_mill.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/endmill.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/sphere_mill.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/toroid_mill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/drill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/tool_renamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_renamer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/transform_cut_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/transform_cut_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +55,18 @@
     "Python.transform_cut_data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "base-class"
+    "git-widget-placeholder": "base-class",
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\milling" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\axial" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\rdy_to_use" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\mixin" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
@@ -111,7 +127,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tool_updater/tool_renamer.py" />
+      <option name="SCRIPT_NAME" value="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_renamer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,7 +149,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tool_updater/transform_cut_data.py" />
+      <option name="SCRIPT_NAME" value="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\transform_cut_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
