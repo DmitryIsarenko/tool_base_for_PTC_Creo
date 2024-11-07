@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test_copy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tool_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tool_base.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_cut_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +51,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "git-widget-placeholder": "base-class",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base",
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/catalogs/drills/hss_regular_drills",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\milling" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\axial" />
@@ -180,9 +194,19 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py</url>
+          <line>213</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self.obj.file_name" language="Python" />
+        <watch expression="fr" language="Python" />
       </configuration>
     </watches-manager>
   </component>

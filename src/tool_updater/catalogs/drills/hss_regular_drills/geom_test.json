@@ -1,37 +1,9 @@
 {
-  "0.90": {
-    "tolerance": "0/-0.014",
-    "diam": 0.9,
-    "flute_len": 12,
-    "length": 34,
-    "edp_no": "P2385NTI0100"
-  },
   "1.10": {
     "tolerance": "0/-0.014",
-    "diam": 1.1,
+    "cutting_edge_diam": 1.1,
     "flute_len": 17,
-    "length": 54,
-    "edp_no": "P2385NTI0100"
-  },
-  "11.90": {
-    "tolerance": "0/-0.027",
-    "diam": 11.9,
-    "flute_len": 101,
-    "length": 151,
-    "edp_no": "P2386STI1300"
-  },
-  "12.90": {
-    "tolerance": "0/-0.027",
-    "diam": 12.9,
-    "flute_len": 101,
-    "length": 151,
-    "edp_no": "P2386STI1300"
-  },
-  "13.10": {
-    "tolerance": "0/-0.027",
-    "diam": 13,
-    "flute_len": 101,
-    "length": 151,
-    "edp_no": "P2386STI1300"
+    "full_body_len": 54,
+    "order_no": "P2385NTI0100"
   }
 }

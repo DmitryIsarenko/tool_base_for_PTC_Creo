@@ -5,7 +5,6 @@ import io
 class Drill:
     tool_file_extension = ".xml"
 
-    firm = "osawa"
     DATETIME = "2024 - 11-13T12:12:12"
 
     teeth_num = 2
