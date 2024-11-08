@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test_copy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tool_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tool_base.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/ss600-b4/uh360-b4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L120.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L60.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L90.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/rough_isoP_isoM/upr210-S4/str340-S4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S2/ua100-S2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S3/ua100-S3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-S4/ss600-S4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-SL4/ss600-SL4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoP_isoM/ss600-R4/ss600-R4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/drills_cut_data_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drills_cut_data_template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/drills_geometry_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drills_geometry_template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_extended_drills/osawa_drills_1692LS_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS_cut_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_extended_drills/osawa_drills_1692LS_geometry.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS_geometry.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/geom_test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/geom_test_copy.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/geom_test_copy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI_cut_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/hss_regular_drills/osawa_drills_2386STI_geometry.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI_geometry.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/t_test_drill — blank.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill_template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/t_test_drill.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill_source.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.tool_renamer.executor": "Run",
-    "Python.transform_cut_data.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "base-class",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/catalogs/drills/hss_regular_drills",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tool_renamer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.transform_cut_data.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;base-class&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/catalogs/drills/hss_regular_drills&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\milling" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes\axial" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes\tool_classes" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\classes" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\_templates\drill" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\endmills\Gesac\univ_isoN\ua100-S3" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\endmills\Gesac\univ_isoN\ua100-S2" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\templates" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
@@ -194,15 +204,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py</url>
-          <line>213</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self.obj.file_name" language="Python" />
