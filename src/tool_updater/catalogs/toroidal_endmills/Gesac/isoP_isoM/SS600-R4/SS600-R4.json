@@ -1,0 +1,258 @@
+{
+  "2.00 R0.20": {
+    "flute_diam": 2,
+    "cutting_edge_rad": 0.2,
+    "flute_len": 6,
+    "full_body_len": 50,
+    "full_body_diam": 4,
+    "order_no": "SS600-R4-02002"
+  },
+  "3.00 R0.50": {
+    "flute_diam": 3,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 8,
+    "full_body_len": 50,
+    "full_body_diam": 4,
+    "order_no": "SS600-R4-03005"
+  },
+  "4.00 R0.50": {
+    "flute_diam": 4,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 11,
+    "full_body_len": 50,
+    "full_body_diam": 4,
+    "order_no": "SS600-R4-04005"
+  },
+  "5.00 R0.50": {
+    "flute_diam": 5,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 13,
+    "full_body_len": 50,
+    "full_body_diam": 6,
+    "order_no": "SS600-R4-05005"
+  },
+  "6.00 R0.50": {
+    "flute_diam": 6,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 16,
+    "full_body_len": 50,
+    "full_body_diam": 6,
+    "order_no": "SS600-R4-06005"
+  },
+  "6.00 R1.00": {
+    "flute_diam": 6,
+    "cutting_edge_rad": 1,
+    "flute_len": 16,
+    "full_body_len": 50,
+    "full_body_diam": 6,
+    "order_no": "SS600-R4-06010"
+  },
+  "6.00 R2.00": {
+    "flute_diam": 6,
+    "cutting_edge_rad": 2,
+    "flute_len": 16,
+    "full_body_len": 50,
+    "full_body_diam": 6,
+    "order_no": "SS600-R4-06020"
+  },
+  "8.00 R0.50": {
+    "flute_diam": 8,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 20,
+    "full_body_len": 60,
+    "full_body_diam": 8,
+    "order_no": "SS600-R4-08005"
+  },
+  "8.00 R1.00": {
+    "flute_diam": 8,
+    "cutting_edge_rad": 1,
+    "flute_len": 20,
+    "full_body_len": 60,
+    "full_body_diam": 8,
+    "order_no": "SS600-R4-08010"
+  },
+  "8.00 R2.00": {
+    "flute_diam": 8,
+    "cutting_edge_rad": 2,
+    "flute_len": 20,
+    "full_body_len": 60,
+    "full_body_diam": 8,
+    "order_no": "SS600-R4-08020"
+  },
+  "8.00 R3.00": {
+    "flute_diam": 8,
+    "cutting_edge_rad": 3,
+    "flute_len": 20,
+    "full_body_len": 60,
+    "full_body_diam": 8,
+    "order_no": "SS600-R4-08030"
+  },
+  "10.00 R0.50": {
+    "flute_diam": 10,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 25,
+    "full_body_len": 75,
+    "full_body_diam": 10,
+    "order_no": "SS600-R4-10005"
+  },
+  "10.00 R1.00": {
+    "flute_diam": 10,
+    "cutting_edge_rad": 1,
+    "flute_len": 25,
+    "full_body_len": 75,
+    "full_body_diam": 10,
+    "order_no": "SS600-R4-10010"
+  },
+  "10.00 R2.00": {
+    "flute_diam": 10,
+    "cutting_edge_rad": 2,
+    "flute_len": 25,
+    "full_body_len": 75,
+    "full_body_diam": 10,
+    "order_no": "SS600-R4-10020"
+  },
+  "10.00 R3.00": {
+    "flute_diam": 10,
+    "cutting_edge_rad": 3,
+    "flute_len": 25,
+    "full_body_len": 75,
+    "full_body_diam": 10,
+    "order_no": "SS600-R4-10030"
+  },
+  "12.00 R0.50": {
+    "flute_diam": 12,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 26,
+    "full_body_len": 83,
+    "full_body_diam": 12,
+    "order_no": "SS600-R4-12005"
+  },
+  "12.00 R1.00": {
+    "flute_diam": 12,
+    "cutting_edge_rad": 1,
+    "flute_len": 26,
+    "full_body_len": 83,
+    "full_body_diam": 12,
+    "order_no": "SS600-R4-12010"
+  },
+  "12.00 R2.00": {
+    "flute_diam": 12,
+    "cutting_edge_rad": 2,
+    "flute_len": 26,
+    "full_body_len": 83,
+    "full_body_diam": 12,
+    "order_no": "SS600-R4-12020"
+  },
+  "12.00 R3.00": {
+    "flute_diam": 12,
+    "cutting_edge_rad": 3,
+    "flute_len": 26,
+    "full_body_len": 83,
+    "full_body_diam": 12,
+    "order_no": "SS600-R4-12030"
+  },
+  "16.00 R0.50": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16005"
+  },
+  "16.00 R1.00": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 1,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16010"
+  },
+  "16.00 R1.50": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 1.5,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16015"
+  },
+  "16.00 R2.00": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 2,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16020"
+  },
+  "16.00 R3.00": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 3,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16030"
+  },
+  "16.00 R4.00": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 4,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16040"
+  },
+  "16.00 R5.00": {
+    "flute_diam": 16,
+    "cutting_edge_rad": 5,
+    "flute_len": 32,
+    "full_body_len": 92,
+    "full_body_diam": 16,
+    "order_no": "SS600-R4-16050"
+  },
+  "20.00 R0.50": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 0.5,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20005"
+  },
+  "20.00 R1.00": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 1,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20010"
+  },
+  "20.00 R2.00": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 2,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20020"
+  },
+  "20.00 R3.00": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 3,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20030"
+  },
+  "20.00 R4.00": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 4,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20040"
+  },
+  "20.00 R5.00": {
+    "flute_diam": 20,
+    "cutting_edge_rad": 5,
+    "flute_len": 38,
+    "full_body_len": 100,
+    "full_body_diam": 20,
+    "order_no": "SS600-R4-20050"
+  }
+}
