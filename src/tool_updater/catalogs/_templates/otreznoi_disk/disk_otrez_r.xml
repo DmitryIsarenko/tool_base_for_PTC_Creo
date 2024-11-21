@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MfgSetupDocument>
+    <DocType>PRO_NC_CUTTING_TOOL_SETUP</DocType>
+    <DocTitle>Инфо режущего инструмента</DocTitle>
+    <DateTime>2024-11-19T19:45:43</DateTime>
+    <ApplicationInfo AppName="Creo" AppVersion="8.0.11.0" FtVersion="360051" Language="russian" MdlVersion="2012"/>
+    <ToolingSetup>
+        <Tool Id="DISK_OTREZ_R" RefXmlId="encref_1" Type="SIDE_MILLING">
+            <Attr DataType="boolean" Name="UseOutline" Value="false"/>
+            <Attr DataType="boolean" Name="ProLibraryTool" Value="false"/>
+            <Attr DataType="boolean" Name="SketchTool" Value="false"/>
+            <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
+            <MfgParam Name="LENGTH_UNITS" Value="MILLIMETER"/>
+            <MfgParam Name="CUTTER_DIAM" Value="100"/>
+            <MfgParam Name="CORNER_RADIUS" Value="6"/>
+            <MfgParam Name="CUTTER_WIDTH" Value="12"/>
+            <MfgParam Name="SHANK_DIAM" Value="25"/>
+            <MfgParam Name="LENGTH" Value="60"/>
+            <MfgParam Name="NUM_OF_TEETH" Value="-"/>
+            <MfgParam Name="TOOL_MATERIAL" Value="-"/>
+            <MfgParam Name="GAUGE_X_LENGTH" Value="-"/>
+            <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
+            <MfgParam Name="COMP_OVERSIZE" Value="-"/>
+            <MfgParam Name="TOOL_LONG_FLAG" Value="NO"/>
+            <MfgParam Name="HOLDER_DIA" Value="40"/>
+            <MfgParam Name="HOLDER_LEN" Value="50"/>
+            <MfgParam Name="COOLANT_OPTION" Value="OFF"/>
+            <MfgParam Name="COOLANT_PRESSURE" Value="NONE"/>
+            <MfgParam Name="SPINDLE_SENSE" Value="CW"/>
+            <MfgParam Name="TOOL_COMMENT" Value="-"/>
+            <ToolSetUpOnWorkcell>
+                <OffsetDataCollection>
+                    <OffsetData Comment="" OffsetZ="0.000000" Register="-1" Tip="1"/>
+                </OffsetDataCollection>
+            </ToolSetUpOnWorkcell>
+        </Tool>
+    </ToolingSetup>
+</MfgSetupDocument>

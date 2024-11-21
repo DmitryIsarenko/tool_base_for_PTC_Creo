@@ -14,16 +14,16 @@
             <MfgParam Name="CUTTER_DIAM" Value="10"/>
             <MfgParam Name="POINT_ANGLE" Value="118"/>
             <MfgParam Name="LENGTH" Value="60"/>
+            <MfgParam Name="HOLDER_DIA" Value="50"/>
+            <MfgParam Name="HOLDER_LEN" Value="50"/>
+            <MfgParam Name="FLUTE_LENGTH" Value="50"/>
             <MfgParam Name="TOOL_MATERIAL" Value="HSS"/>
             <MfgParam Name="GAUGE_X_LENGTH" Value="-"/>
             <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
             <MfgParam Name="TOOL_LONG_FLAG" Value="YES"/>
-            <MfgParam Name="HOLDER_DIA" Value="50"/>
-            <MfgParam Name="HOLDER_LEN" Value="50"/>
             <MfgParam Name="COOLANT_OPTION" Value="ON"/>
             <MfgParam Name="COOLANT_PRESSURE" Value="LOW"/>
             <MfgParam Name="SPINDLE_SENSE" Value="CW"/>
-            <MfgParam Name="FLUTE_LENGTH" Value="50"/>
             <MfgParam Name="TOOL_COMMENT" Value="COMMENT"/>
             <ToolCutData>
                 <Material>

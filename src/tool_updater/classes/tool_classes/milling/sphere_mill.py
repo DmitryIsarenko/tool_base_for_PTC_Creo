@@ -12,7 +12,6 @@ class BallMill(BaseTool):
     tool_material_manual = "VHM"
     tool_type = "BALL MILL"
 
-    vc_min_or_max = 0  # 0 для минимальной скорости, -1 для максимальной, если их указано две или более
     finishing_roughing_options = {
         "roughing": {
             "vc_modifier": 1,  # Множитель для подачи (и на зуб, и на оборот)
@@ -48,7 +47,7 @@ class BallMill(BaseTool):
                  teeth_num: int,
                  file_name_prefix: str,
                  file_name_suffix: str,
-                 debug_mode: bool,
+                 debug_mode: int,
                  **kwargs):
         self.tool_size_from_geom_catalogue = tool_size_from_geom_catalogue
         self.catalog_tool_cut_data = catalog_tool_cut_data
@@ -76,7 +75,7 @@ class BallMill(BaseTool):
         t_name = self.tool_data["tool_diam_float"]
         return t_name
 
-    def create_tool_name(self):
+    def create_tool_name_for_xml(self):
         t_prefix = self.tool_data["file_name_prefix"].upper()
         t_suffix = self.tool_data["file_name_suffix"].upper()
         t_name = f"{t_prefix}D{self.tool_data["CUTTER_DIAM"].replace(".", "-")}_L{self.tool_data["FLUTE_LENGTH"]}-L{self.tool_data["LENGTH"]}{t_suffix}"
@@ -102,7 +101,7 @@ class BallMill(BaseTool):
     def set_xml_body_tool_params(self) -> str:
         xml_part_str = f"""\
     <ToolingSetup>
-        <Tool Id="{self.tool_data["tool_name_str"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
+        <Tool Id="{self.tool_data["tool_name_for_xml"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
             <Attr DataType="boolean" Name="UseOutline" Value="false"/>
             <Attr DataType="boolean" Name="ProLibraryTool" Value="false"/>
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>

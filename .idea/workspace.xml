@@ -5,55 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/UA100-B2/UA100-B2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/UA100-B2/UA100-B2_cut_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/rough_isoP_isoM/UPR210-S4(STR340-S4)/UPR210-S4(STR340-S4).json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/SS600-S4(UH360-S4)/SS600-S4(UH360-S4).json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/SS600-S4(UH360-S4)/SS600-S4(UH360-S4)_cut_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoN/UA100-R3/UA100-R3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoN/UA100-R3/UA100-R3_cut_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/SGSF.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/SGSF_cut_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/edit_copy_SGSF.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/edit_copy_SGSF_cut_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/edit_copy_holders_for_SGSF.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/otrez_disk/Iscar/holders_for_SGSF.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/cut_data_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/cut_data_template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill_source.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill_template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/endmill/endmill_geom.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/endmill/endmill_geom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/endmill/endmill_source.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/endmill/endmill_template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/geom_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/geom_template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/ss600-b4/uh360-b4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/SS600-B4/SS600-B4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/ss600-b4/uh360-b4_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/ballnose_mills/Gesac/SS600-B4/SS600-B4_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L120.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L120.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L120_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L120_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L60.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L60.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L60_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L60_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L90.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L90.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/up210/up210-L90_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/chamfer_mills/Gesac/UP210/UP210-L90_cut_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/drill/drill.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS_geometry.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_extended_drills/1692LS.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI_geometry.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/rough_isoP_isoM/upr210-S4/str340-S4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/rough_isoP_isoM/UPR210-S4(STR340-S4)/UPR210-S4(STR340-S4)_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/rough_isoP_isoM/upr210-S4/str340-S4_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-S2/UA100-S2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S2/ua100-S2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-S2/UA100-S2_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S2/ua100-S2_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-S3/UA100-S3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S3/ua100-S3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-S3/UA100-S3_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-S3/ua100-S3_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-SL3/UA100-SL3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-SL3/ua100-SL3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/UA100-SL3/UA100-SL3_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoN/ua100-SL3/ua100-SL3_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/SS600-SL4(UP210-SL4)/SS600-SL4(UP210-SL4).json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-S4/ss600-S4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/SS600-SL4(UP210-SL4)/SS600-SL4(UP210-SL4)_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-S4/ss600-S4_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoP_isoM/SS600-R4/SS600-R4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-SL4/ss600-SL4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoP_isoM/SS600-R4/SS600-R4_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/endmills/Gesac/univ_isoP_iso_M/ss600-SL4/ss600-SL4_cut_data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoP_isoM/ss600-R4/ss600-R4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoP_isoM/ss600-R4/ss600-R4_cut_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/drills/Osawa/hss_regular_drills/2386STI.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoN/UA100-R3/UA100-R3_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoN/UA100-R3/UA100-R3_cut_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/drill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/disk_mill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/disk_mill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/endmill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/endmill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/sphere_mill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/sphere_mill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/toroid_mill.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/toroid_mill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/transform_cut_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/transform_cut_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/default_tool_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/default_tool_dict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,23 +61,25 @@
     "Python.transform_cut_data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "endmill",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/catalogs/toroidal_endmills/Gesac/isoN/ua100-R3",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "git-widget-placeholder": "drills",
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/catalogs/otrez_disk/Iscar",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk\Iscar" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\toroidal_endmills\Gesac\isoN\ua100-R3" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\ballnose_mills\Gesac\UA100-B2" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\hss_regular_drills" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk\Iscar" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\_templates\drill" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\endmills\Gesac\univ_isoN\ua100-S3" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\endmills\Gesac\univ_isoN\ua100-S2" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\templates" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
@@ -256,5 +230,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.tool_data[&quot;LENGTH&quot;]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -1,7 +1,9 @@
-NDIGITS_FEED = 2
-NDIGITS_FEED_PER_UNIT = 4
-NDIGITS_AXIAL_FEED = 2
-NDIGITS_RADIAL_FEED = 2
+MAX_RPM = 18000
+
+NDIGITS_FEED = 3
+NDIGITS_FEED_PER_UNIT = 5
+NDIGITS_AXIAL_FEED = 3
+NDIGITS_RADIAL_FEED = 3
 NDIGITS_SPINDLE = 2
 NDIGITS_SURFACE_SPEED = 3
 
@@ -29,7 +31,8 @@ key_lowering_len = "neck_len"
 key_lowering_diam = "neck_diam"
 key_edge_radius = "cutting_edge_rad"
 key_edge_chamfer = "cutting_edge_chamfer"
-
+key_shank_diam = "shank_diam"
+key_num_of_teeth = "num_of_teeth"
 
 # CUT DATA CATALOGUE
 # main key. Value will be dictionary with subkeys
@@ -46,7 +49,8 @@ key_z = "z"  # Число режущих кромок или пластин
 key_fn = "Fn"  # Подача на мм/оборот
 key_fz = "Fz"  # Подача мм/зуб
 key_f = "F"  # Подача мм/мин
-
+key_ae = "Ae"  # Радиальная подача (engagement)
+key_ap = "Ap"  # Осевая подача (profile)
 
 mfg_materials_dict = {
     "ALUMINIUM": key_iso_N,

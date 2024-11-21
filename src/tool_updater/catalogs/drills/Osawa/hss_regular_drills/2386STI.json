@@ -1,5 +1,6 @@
 {
   "1.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1,
     "flute_len": 12,
@@ -7,6 +8,7 @@
     "order_no": "P2385NTI0100"
   },
   "1.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.1,
     "flute_len": 14,
@@ -14,6 +16,7 @@
     "order_no": "P2385NTI0110"
   },
   "1.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.2,
     "flute_len": 16,
@@ -21,6 +24,7 @@
     "order_no": "P2385NTI0120"
   },
   "1.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.3,
     "flute_len": 16,
@@ -28,6 +32,7 @@
     "order_no": "P2385NTI0130"
   },
   "1.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.4,
     "flute_len": 18,
@@ -35,6 +40,7 @@
     "order_no": "P2385NTI0140"
   },
   "1.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.5,
     "flute_len": 18,
@@ -42,6 +48,7 @@
     "order_no": "P2385NTI0150"
   },
   "1.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.6,
     "flute_len": 20,
@@ -49,6 +56,7 @@
     "order_no": "P2386STI0160"
   },
   "1.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.7,
     "flute_len": 20,
@@ -56,6 +64,7 @@
     "order_no": "P2386STI0170"
   },
   "1.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.8,
     "flute_len": 22,
@@ -63,6 +72,7 @@
     "order_no": "P2386STI0180"
   },
   "1.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 1.9,
     "flute_len": 22,
@@ -70,6 +80,7 @@
     "order_no": "P2386STI0190"
   },
   "2.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2,
     "flute_len": 24,
@@ -77,6 +88,7 @@
     "order_no": "P2386STI0200"
   },
   "2.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.1,
     "flute_len": 24,
@@ -84,6 +96,7 @@
     "order_no": "P2386STI0210"
   },
   "2.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.2,
     "flute_len": 27,
@@ -91,6 +104,7 @@
     "order_no": "P2386STI0220"
   },
   "2.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.3,
     "flute_len": 27,
@@ -98,6 +112,7 @@
     "order_no": "P2386STI0230"
   },
   "2.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.4,
     "flute_len": 30,
@@ -105,6 +120,7 @@
     "order_no": "P2386STI0240"
   },
   "2.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.5,
     "flute_len": 30,
@@ -112,6 +128,7 @@
     "order_no": "P2386STI0250"
   },
   "2.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.6,
     "flute_len": 30,
@@ -119,6 +136,7 @@
     "order_no": "P2386STI0260"
   },
   "2.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.7,
     "flute_len": 33,
@@ -126,6 +144,7 @@
     "order_no": "P2386STI0270"
   },
   "2.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.8,
     "flute_len": 33,
@@ -133,6 +152,7 @@
     "order_no": "P2386STI0280"
   },
   "2.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 2.9,
     "flute_len": 33,
@@ -140,6 +160,7 @@
     "order_no": "P2386STI0290"
   },
   "3.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.014",
     "flute_diam": 3,
     "flute_len": 33,
@@ -147,6 +168,7 @@
     "order_no": "P2386STI0300"
   },
   "3.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.1,
     "flute_len": 36,
@@ -154,6 +176,7 @@
     "order_no": "P2386STI0310"
   },
   "3.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.2,
     "flute_len": 36,
@@ -161,6 +184,7 @@
     "order_no": "P2386STI0320"
   },
   "3.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.3,
     "flute_len": 36,
@@ -168,6 +192,7 @@
     "order_no": "P2386STI0330"
   },
   "3.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.4,
     "flute_len": 39,
@@ -175,6 +200,7 @@
     "order_no": "P2386STI0340"
   },
   "3.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.5,
     "flute_len": 39,
@@ -182,6 +208,7 @@
     "order_no": "P2386STI0350"
   },
   "3.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.6,
     "flute_len": 39,
@@ -189,6 +216,7 @@
     "order_no": "P2386STI0360"
   },
   "3.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.7,
     "flute_len": 39,
@@ -196,6 +224,7 @@
     "order_no": "P2386STI0370"
   },
   "3.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.8,
     "flute_len": 43,
@@ -203,6 +232,7 @@
     "order_no": "P2386STI0380"
   },
   "3.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 3.9,
     "flute_len": 43,
@@ -210,6 +240,7 @@
     "order_no": "P2386STI0390"
   },
   "4.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4,
     "flute_len": 43,
@@ -217,6 +248,7 @@
     "order_no": "P2386STI0400"
   },
   "4.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.1,
     "flute_len": 43,
@@ -224,6 +256,7 @@
     "order_no": "P2386STI0410"
   },
   "4.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.2,
     "flute_len": 43,
@@ -231,6 +264,7 @@
     "order_no": "P2386STI0420"
   },
   "4.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.3,
     "flute_len": 47,
@@ -238,6 +272,7 @@
     "order_no": "P2386STI0430"
   },
   "4.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.4,
     "flute_len": 47,
@@ -245,6 +280,7 @@
     "order_no": "P2386STI0440"
   },
   "4.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.5,
     "flute_len": 47,
@@ -252,6 +288,7 @@
     "order_no": "P2386STI0450"
   },
   "4.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.6,
     "flute_len": 47,
@@ -259,6 +296,7 @@
     "order_no": "P2386STI0460"
   },
   "4.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.7,
     "flute_len": 47,
@@ -266,6 +304,7 @@
     "order_no": "P2386STI0470"
   },
   "4.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.8,
     "flute_len": 52,
@@ -273,6 +312,7 @@
     "order_no": "P2386STI0480"
   },
   "4.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 4.9,
     "flute_len": 52,
@@ -280,6 +320,7 @@
     "order_no": "P2386STI0490"
   },
   "5.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5,
     "flute_len": 52,
@@ -287,6 +328,7 @@
     "order_no": "P2386STI0500"
   },
   "5.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.1,
     "flute_len": 52,
@@ -294,6 +336,7 @@
     "order_no": "P2386STI0510"
   },
   "5.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.2,
     "flute_len": 52,
@@ -301,6 +344,7 @@
     "order_no": "P2386STI0520"
   },
   "5.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.3,
     "flute_len": 52,
@@ -308,6 +352,7 @@
     "order_no": "P2386STI0530"
   },
   "5.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.4,
     "flute_len": 57,
@@ -315,6 +360,7 @@
     "order_no": "P2386STI0540"
   },
   "5.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.5,
     "flute_len": 57,
@@ -322,6 +368,7 @@
     "order_no": "P2386STI0550"
   },
   "5.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.6,
     "flute_len": 57,
@@ -329,6 +376,7 @@
     "order_no": "P2386STI0560"
   },
   "5.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.7,
     "flute_len": 57,
@@ -336,6 +384,7 @@
     "order_no": "P2386STI0570"
   },
   "5.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.8,
     "flute_len": 57,
@@ -343,6 +392,7 @@
     "order_no": "P2386STI0580"
   },
   "5.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 5.9,
     "flute_len": 57,
@@ -350,6 +400,7 @@
     "order_no": "P2386STI0590"
   },
   "6.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.018",
     "flute_diam": 6,
     "flute_len": 57,
@@ -357,6 +408,7 @@
     "order_no": "P2386STI0600"
   },
   "6.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.1,
     "flute_len": 63,
@@ -364,6 +416,7 @@
     "order_no": "P2386STI0610"
   },
   "6.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.2,
     "flute_len": 63,
@@ -371,6 +424,7 @@
     "order_no": "P2386STI0620"
   },
   "6.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.3,
     "flute_len": 63,
@@ -378,6 +432,7 @@
     "order_no": "P2386STI0630"
   },
   "6.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.4,
     "flute_len": 63,
@@ -385,6 +440,7 @@
     "order_no": "P2386STI0640"
   },
   "6.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.5,
     "flute_len": 63,
@@ -392,6 +448,7 @@
     "order_no": "P2386STI0650"
   },
   "6.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.6,
     "flute_len": 63,
@@ -399,6 +456,7 @@
     "order_no": "P2386STI0660"
   },
   "6.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.7,
     "flute_len": 63,
@@ -406,6 +464,7 @@
     "order_no": "P2386STI0670"
   },
   "6.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.8,
     "flute_len": 69,
@@ -413,6 +472,7 @@
     "order_no": "P2386STI0680"
   },
   "6.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 6.9,
     "flute_len": 69,
@@ -420,6 +480,7 @@
     "order_no": "P2386STI0690"
   },
   "7.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7,
     "flute_len": 69,
@@ -427,6 +488,7 @@
     "order_no": "P2386STI0700"
   },
   "7.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.1,
     "flute_len": 69,
@@ -434,6 +496,7 @@
     "order_no": "P2386STI0710"
   },
   "7.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.2,
     "flute_len": 69,
@@ -441,6 +504,7 @@
     "order_no": "P2386STI0720"
   },
   "7.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.3,
     "flute_len": 69,
@@ -448,6 +512,7 @@
     "order_no": "P2386STI0730"
   },
   "7.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.4,
     "flute_len": 69,
@@ -455,6 +520,7 @@
     "order_no": "P2386STI0740"
   },
   "7.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.5,
     "flute_len": 69,
@@ -462,6 +528,7 @@
     "order_no": "P2386STI0750"
   },
   "7.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.6,
     "flute_len": 75,
@@ -469,6 +536,7 @@
     "order_no": "P2386STI0760"
   },
   "7.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.7,
     "flute_len": 75,
@@ -476,6 +544,7 @@
     "order_no": "P2386STI0770"
   },
   "7.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.8,
     "flute_len": 75,
@@ -483,6 +552,7 @@
     "order_no": "P2386STI0780"
   },
   "7.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 7.9,
     "flute_len": 75,
@@ -490,6 +560,7 @@
     "order_no": "P2386STI0790"
   },
   "8.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8,
     "flute_len": 75,
@@ -497,6 +568,7 @@
     "order_no": "P2386STI0800"
   },
   "8.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.1,
     "flute_len": 75,
@@ -504,6 +576,7 @@
     "order_no": "P2386STI0810"
   },
   "8.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.2,
     "flute_len": 75,
@@ -511,6 +584,7 @@
     "order_no": "P2386STI0820"
   },
   "8.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.3,
     "flute_len": 75,
@@ -518,6 +592,7 @@
     "order_no": "P2386STI0830"
   },
   "8.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.4,
     "flute_len": 75,
@@ -525,6 +600,7 @@
     "order_no": "P2386STI0840"
   },
   "8.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.5,
     "flute_len": 75,
@@ -532,6 +608,7 @@
     "order_no": "P2386STI0850"
   },
   "8.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.6,
     "flute_len": 81,
@@ -539,6 +616,7 @@
     "order_no": "P2386STI0860"
   },
   "8.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.7,
     "flute_len": 81,
@@ -546,6 +624,7 @@
     "order_no": "P2386STI0870"
   },
   "8.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.8,
     "flute_len": 81,
@@ -553,6 +632,7 @@
     "order_no": "P2386STI0880"
   },
   "8.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 8.9,
     "flute_len": 81,
@@ -560,6 +640,7 @@
     "order_no": "P2386STI0890"
   },
   "9.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9,
     "flute_len": 81,
@@ -567,6 +648,7 @@
     "order_no": "P2386STI0900"
   },
   "9.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.1,
     "flute_len": 81,
@@ -574,6 +656,7 @@
     "order_no": "P2386STI0910"
   },
   "9.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.2,
     "flute_len": 81,
@@ -581,6 +664,7 @@
     "order_no": "P2386STI0920"
   },
   "9.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.3,
     "flute_len": 81,
@@ -588,6 +672,7 @@
     "order_no": "P2386STI0930"
   },
   "9.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.4,
     "flute_len": 81,
@@ -595,6 +680,7 @@
     "order_no": "P2386STI0940"
   },
   "9.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.5,
     "flute_len": 81,
@@ -602,6 +688,7 @@
     "order_no": "P2386STI0950"
   },
   "9.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.6,
     "flute_len": 87,
@@ -609,6 +696,7 @@
     "order_no": "P2386STI0960"
   },
   "9.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.7,
     "flute_len": 87,
@@ -616,6 +704,7 @@
     "order_no": "P2386STI0970"
   },
   "9.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.8,
     "flute_len": 87,
@@ -623,6 +712,7 @@
     "order_no": "P2386STI0980"
   },
   "9.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 9.9,
     "flute_len": 87,
@@ -630,6 +720,7 @@
     "order_no": "P2386STI0990"
   },
   "10.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.022",
     "flute_diam": 10,
     "flute_len": 87,
@@ -637,6 +728,7 @@
     "order_no": "P2386STI1000"
   },
   "10.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.1,
     "flute_len": 87,
@@ -644,6 +736,7 @@
     "order_no": "P2386STI1010"
   },
   "10.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.2,
     "flute_len": 87,
@@ -651,6 +744,7 @@
     "order_no": "P2386STI1020"
   },
   "10.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.3,
     "flute_len": 87,
@@ -658,6 +752,7 @@
     "order_no": "P2386STI1030"
   },
   "10.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.4,
     "flute_len": 87,
@@ -665,6 +760,7 @@
     "order_no": "P2386STI1040"
   },
   "10.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.5,
     "flute_len": 87,
@@ -672,6 +768,7 @@
     "order_no": "P2386STI1050"
   },
   "10.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.6,
     "flute_len": 87,
@@ -679,6 +776,7 @@
     "order_no": "P2386STI1060"
   },
   "10.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.7,
     "flute_len": 94,
@@ -686,6 +784,7 @@
     "order_no": "P2386STI1070"
   },
   "10.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.8,
     "flute_len": 94,
@@ -693,6 +792,7 @@
     "order_no": "P2386STI1080"
   },
   "10.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 10.9,
     "flute_len": 94,
@@ -700,6 +800,7 @@
     "order_no": "P2386STI1090"
   },
   "11.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11,
     "flute_len": 94,
@@ -707,6 +808,7 @@
     "order_no": "P2386STI1100"
   },
   "11.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.1,
     "flute_len": 94,
@@ -714,6 +816,7 @@
     "order_no": "P2386STI1110"
   },
   "11.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.2,
     "flute_len": 94,
@@ -721,6 +824,7 @@
     "order_no": "P2386STI1120"
   },
   "11.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.3,
     "flute_len": 94,
@@ -728,6 +832,7 @@
     "order_no": "P2386STI1130"
   },
   "11.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.4,
     "flute_len": 94,
@@ -735,6 +840,7 @@
     "order_no": "P2386STI1140"
   },
   "11.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.5,
     "flute_len": 94,
@@ -742,6 +848,7 @@
     "order_no": "P2386STI1150"
   },
   "11.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.6,
     "flute_len": 94,
@@ -749,6 +856,7 @@
     "order_no": "P2386STI1160"
   },
   "11.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.7,
     "flute_len": 94,
@@ -756,6 +864,7 @@
     "order_no": "P2386STI1170"
   },
   "11.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.8,
     "flute_len": 94,
@@ -763,6 +872,7 @@
     "order_no": "P2386STI1180"
   },
   "11.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 11.9,
     "flute_len": 101,
@@ -770,6 +880,7 @@
     "order_no": "P2386STI1190"
   },
   "12.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12,
     "flute_len": 101,
@@ -777,6 +888,7 @@
     "order_no": "P2386STI1200"
   },
   "12.10": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.1,
     "flute_len": 101,
@@ -784,6 +896,7 @@
     "order_no": "P2386STI1210"
   },
   "12.20": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.2,
     "flute_len": 101,
@@ -791,6 +904,7 @@
     "order_no": "P2386STI1220"
   },
   "12.30": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.3,
     "flute_len": 101,
@@ -798,6 +912,7 @@
     "order_no": "P2386STI1230"
   },
   "12.40": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.4,
     "flute_len": 101,
@@ -805,6 +920,7 @@
     "order_no": "P2386STI1240"
   },
   "12.50": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.5,
     "flute_len": 101,
@@ -812,6 +928,7 @@
     "order_no": "P2386STI1250"
   },
   "12.60": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.6,
     "flute_len": 101,
@@ -819,6 +936,7 @@
     "order_no": "P2386STI1260"
   },
   "12.70": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.7,
     "flute_len": 101,
@@ -826,6 +944,7 @@
     "order_no": "P2386STI1270"
   },
   "12.80": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.8,
     "flute_len": 101,
@@ -833,6 +952,7 @@
     "order_no": "P2386STI1280"
   },
   "12.90": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 12.9,
     "flute_len": 101,
@@ -840,6 +960,7 @@
     "order_no": "P2386STI1290"
   },
   "13.00": {
+    "point_angle": "135",
     "tolerance": "0/-0.027",
     "flute_diam": 13,
     "flute_len": 101,

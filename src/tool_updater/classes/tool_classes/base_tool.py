@@ -7,6 +7,8 @@ from src.tool_updater.default_tool_dict import default_tool_dict
 
 import logging
 
+from tool_updater.config import key_f, key_fn, key_fz
+
 logger = logging.getLogger(__name__)
 
 
@@ -21,40 +23,34 @@ class BaseTool:
     tool_type = "default tool type"
     tool_material_manual = "HSS"
 
-    holder_len_manual = 50
+    holder_len_manual = "50.00"
 
-    # vc_min_or_max = 0  # 0 для минимальной скорости, -1 для максимальной, если их указано две или более
     finishing_roughing_options = {
         "roughing": {
             "vc_modifier": 1,  # Множитель для подачи (и на зуб, и на оборот)
-            "feed_rate_multiplier": 0.6,  # Множитель для скорости резания
+            "feed_rate_multiplier": 1,  # Множитель для скорости резания
         },
         "finishing": {
-            "vc_modifier": 1.2,
-            "feed_rate_multiplier": 0.4,
+            "vc_modifier": 1.0,
+            "feed_rate_multiplier": 1,
         },
     }
 
-    peck_depth_modifier_common = 0.25  # Общий множитель глубины прерывистого сверления (доля диаметра)
-    peck_depth_modifier_iso_P = 1.5  # умножается на величину общего peck depth
-    peck_depth_modifier_iso_M = 1  # умножается на величину общего peck depth
-    peck_depth_modifier_iso_N = 2  # умножается на величину общего peck depth
-
     axial_depth_modifiyers = {
-        "iso_P": 1.5,
-        "iso_M": 1.5,
-        "iso_K": 1.5,
-        "iso_N": 1.5,
-        "iso_S": 1.5,
-        "iso_H": 1.5,
+        "iso_P": 1.0,
+        "iso_M": 1.0,
+        "iso_K": 1.0,
+        "iso_N": 1.0,
+        "iso_S": 1.0,
+        "iso_H": 1.0,
     }
     radial_depth_modifiyers = {
-        "iso_P": 0.15,
+        "iso_P": 0.1,
         "iso_M": 0.1,
         "iso_K": 0.1,
         "iso_N": 0.2,
         "iso_S": 0.1,
-        "iso_H": 0.025,
+        "iso_H": 0.1,
     }
 
     def __init__(self,
@@ -64,12 +60,12 @@ class BaseTool:
                  teeth_num: int,
                  file_name_prefix: str,
                  file_name_suffix: str,
-                 debug_mode: bool,
+                 debug_mode: int,
                  **kwargs):
         self.debug = debug_mode
         self.teeth_num = teeth_num
         if self.debug:
-            config.finishing_roughing_options = {
+            self.finishing_roughing_options = {
                 "roughing": {
                     "vc_modifier": 1,  # Множитель для подачи (и на зуб, и на оборот)
                     "feed_rate_multiplier": 1,  # Множитель для скорости резания
@@ -94,11 +90,11 @@ class BaseTool:
         self.catalog_cut_data = catalog_tool_cut_data
 
         # 2.0 Независимые данные
-        self.tool_data["HOLDER_LEN"] = self.holder_len_manual
+        self.tool_data["HOLDER_LEN"] = self.get_holder_len()
 
         # 2.1 Создание данных, основанных на имени (диаметре) инструмента
-        self.tool_data["tool_diam_float"] = float(self.tool_data["tool_name_str"])
-        self.tool_data["CUTTER_DIAM"] = self.tool_data["tool_name_str"]
+        self.tool_data["tool_diam_float"] = self.get_tool_diam_float()
+        self.tool_data["CUTTER_DIAM"] = self.get_cutter_diam()
         self.tool_data["cut_data_diam_group"] = self.calc_diam_group_name()
         self.tool_data["HOLDER_DIA"] = self.calc_nut_diam()
 
@@ -107,31 +103,31 @@ class BaseTool:
         self.tool_data["tool_name_for_cut_catalogue"] = self.create_tool_name_for_cut_catalogue()
 
         # 3 Объявление переменных, используемых в XML
-        self.tool_data["TOOL_MATERIAL"] = self.tool_material_manual
-        self.tool_data["NUM_OF_TEETH"] = self.teeth_num
-        self.tool_data["tool_type"] = self.tool_type
+        self.tool_data["TOOL_MATERIAL"] = self.get_tool_material()
+        self.tool_data["NUM_OF_TEETH"] = self.get_tool_teeth_num()
+        self.tool_data["tool_type"] = self.get_tool_type()
 
         # 3.1 Получение данных из каталога геометрии
-        self.tool_data["LENGTH"] = self.get_tool_length()
+        self.tool_data["LENGTH"] = self.get_full_tool_length()
         self.tool_data["FLUTE_LENGTH"] = self.get_tool_flute_length()
         self.tool_data["TOOL_COMMENT"] = self.get_tool_comment()
 
         # 3.2 Создание данных, основанных на данных из каталога геометрии
         self.tool_data["len_out_of_holder"] = self.calc_len_out_of_holder()
-        self.tool_data["tool_name_str"] = self.create_tool_name()
+        self.tool_data["tool_name_for_xml"] = self.create_tool_name_for_xml()
         self.tool_data["file_name"] = self.create_file_name()
 
         # 3.3 Расчет режимов резания для всех групп материалов
         self.calc_cut_data_for_all_material_groups()
 
         # 4 Генерация XML
-        self.set_tool_xml()
+        # self.set_tool_xml()
 
     #
     #
     #
     # GET FROM GEOM CATALOGUE
-    def get_tool_length(self) -> float:
+    def get_full_tool_length(self) -> float:
         try:
             t_name = self.tool_data["tool_name_for_geom_catalogue"]
             fractional_part = t_name.split(".")[1]
@@ -161,6 +157,24 @@ class BaseTool:
             logger.warning(f"{self.tool_data["tool_name_str"]} - Tool flute len not found")
             return ""
 
+    def get_tool_diam_float(self):
+        return float(self.tool_data["tool_name_str"])
+
+    def get_cutter_diam(self):
+        return self.tool_data["tool_name_str"]
+
+    def get_holder_len(self):
+        return self.holder_len_manual
+
+    def get_tool_material(self):
+        return self.tool_material_manual
+
+    def get_tool_teeth_num(self):
+        return self.teeth_num
+
+    def get_tool_type(self):
+        return self.tool_type
+
     #
     #
     #
@@ -187,7 +201,13 @@ class BaseTool:
     def calc_diam_group_name(self):
         try:
             iso_key = list(self.catalog_cut_data.keys())[0]
-            diam_groups = [key for key in self.catalog_cut_data[iso_key][config.key_f]]
+            cut_keys = list(self.catalog_cut_data[iso_key].keys())
+            cut_key = key_fn
+            for key in cut_keys:
+                if key in [key_fn, key_f, key_fz]:
+                    cut_key = key
+                    break
+            diam_groups = [key for key in self.catalog_cut_data[iso_key][cut_key]]
             t_diam = self.tool_data["tool_diam_float"]
             suitable_grp = list()
             for grp_ind, grp in enumerate(diam_groups):
@@ -227,10 +247,22 @@ class BaseTool:
                 tool_axial_depth = self.calc_axial_depth(key_iso_material=key_iso_material)
                 tool_radial_depth = self.calc_radial_depth(key_iso_material=key_iso_material)
 
-                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_FEED_PER_UNIT"] = tool_feed_per_unit
-                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_FEED_RATE"] = tool_feed_rate
-                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_AXIAL_DEPTH"] = tool_axial_depth
-                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_RADIAL_DEPTH"] = tool_radial_depth
+                multiplyer = 1
+                if tool_spindle_rpm >= config.MAX_RPM:
+                    multiplyer = config.MAX_RPM / tool_spindle_rpm
+                    self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_SPINDLE_RPM"] = round(
+                        tool_spindle_rpm * multiplyer, ndigits=config.NDIGITS_SPINDLE)
+                    self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_SURFACE_SPEED"] = round(
+                        tool_surface_speed * multiplyer, ndigits=config.NDIGITS_SURFACE_SPEED)
+
+                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_FEED_PER_UNIT"] = round(
+                    tool_feed_per_unit * multiplyer, ndigits=config.NDIGITS_FEED_PER_UNIT)
+                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_FEED_RATE"] = round(
+                    tool_feed_rate * multiplyer, ndigits=config.NDIGITS_FEED)
+                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_AXIAL_DEPTH"] = round(
+                    tool_axial_depth * multiplyer, ndigits=config.NDIGITS_AXIAL_FEED)
+                self.tool_data["cut_data"][key_iso_material][fin_or_rough]["TOOL_RADIAL_DEPTH"] = round(
+                    tool_radial_depth * multiplyer, ndigits=config.NDIGITS_RADIAL_FEED)
 
     def calc_rpm(self, Vc: int | float) -> float:
         try:
@@ -255,8 +287,8 @@ class BaseTool:
         try:
             Fn = self.catalog_cut_data[key_iso_material][config.key_fn][self.tool_data["cut_data_diam_group"]]
             feed_multiplier = self.finishing_roughing_options[fin_or_rough]["feed_rate_multiplier"]
-            rpm = Fn * RPM * feed_multiplier
-            return round(rpm, ndigits=config.NDIGITS_FEED)
+            Fn = Fn * RPM * feed_multiplier
+            return round(Fn, ndigits=config.NDIGITS_FEED)
         except:
             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
@@ -314,16 +346,52 @@ class BaseTool:
         t_name = self.tool_data["tool_diam_float"]
         return t_name
 
-    def create_tool_name(self):
+    def create_tool_name_for_xml(self):
         t_prefix = self.tool_data["file_name_prefix"].upper()
         t_suffix = self.tool_data["file_name_suffix"].upper()
-        t_name = f"{t_prefix}D{self.tool_data["CUTTER_DIAM"].replace(".", "-")}_L{self.tool_data["FLUTE_LENGTH"]}-{self.tool_data["LENGTH"]}{t_suffix}"
+
+        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".").replace(".", "-")
+        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".").replace(".", "-")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".").replace(".", "-")
+
+        t_name = (
+            f"{t_prefix}"
+            f"D{d}"
+            f"_L{l1}"
+            f"_L{l2}"
+            f"{t_suffix}"
+        )
         return t_name
 
     def create_file_name(self):
-        t_name = f"D{self.tool_data["tool_diam_float"]}_L{self.tool_data["FLUTE_LENGTH"]}-{self.tool_data["LENGTH"]}"
+
+        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".")
+        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".")
+
+        t_name = (
+            f"D{d}"
+            f"_L{l1}"
+            f"_L{l2}"
+        )
         return t_name
 
+    @staticmethod
+    def clear_str_from_trailing_zeros(str_to_clean: str, sep: str):
+        new_str = str_to_clean.split(sep=sep)[0]
+        try:
+            rev_str_pt2 = str_to_clean.split(".")[1][::-1]
+            rev_new_pt = ""
+            for ch_i, char in enumerate(rev_str_pt2):
+                if char != "0":
+                    rev_new_pt += char
+                else:
+                    continue
+            if rev_new_pt:
+                new_str += sep + rev_new_pt[::-1]
+        except:
+            pass
+        return new_str
     #
     #
     #
@@ -354,7 +422,7 @@ class BaseTool:
     #
     # XML DEFINITION
     def set_tool_xml(self):
-        if self.debug is False:
+        if self.debug == 0:
             try:
                 self.tool_xml = ""
                 self.tool_xml += self.set_xml_head()
@@ -365,13 +433,12 @@ class BaseTool:
             except:
                 self.tool_xml = "ERROR IN XML GENERATION"
                 logger.critical(f"{self.tool_data["tool_name_str"]} - XML not created")
-        else:
-            # try:
+        elif self.debug == 1:
             self.tool_xml = \
                 f"""\
 <?xml version="1.0" encoding="UTF-8"?>
 <DateTime>{self.DATETIME}</DateTime>
-<Tool Id="{self.tool_data["tool_name_str"]}" RefXmlId="encref_1" Type="BASIC DRILL">
+<Tool Id="{self.tool_data["tool_name_for_xml"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
 
 Общие:
     "GAUGE_X_LENGTH": "{self.tool_data["GAUGE_X_LENGTH"]}",
@@ -384,6 +451,7 @@ class BaseTool:
     "COOLANT_PRESSURE": "{self.tool_data["COOLANT_PRESSURE"]}",
 # геометрия
     "CUTTER_DIAM": {self.tool_data["CUTTER_DIAM"]},
+    "CORNER_RADIUS": {self.tool_data["CORNER_RADIUS"]}"
     "NUM_OF_TEETH": {self.tool_data["NUM_OF_TEETH"]},
     "HOLDER_DIA": {self.tool_data["HOLDER_DIA"]},
     "HOLDER_LEN": {self.tool_data["HOLDER_LEN"]},
@@ -411,55 +479,62 @@ class BaseTool:
     "DRILL_DIAMETER": {self.tool_data["DRILL_DIAMETER"]},
     "DRILL_LENGTH": {self.tool_data["DRILL_LENGTH"]},
     "CHAMFER_LENGTH": {self.tool_data["CHAMFER_LENGTH"]},
-    
-    
-"STEEL-20"/>
-    "ROUGHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_AXIAL_DEPTH"]}
-    
-    "FINISHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_AXIAL_DEPTH"]}
-
-
-"12X18H10T"/>
-    "ROUGHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_AXIAL_DEPTH"]}
-    
-    "FINISHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_AXIAL_DEPTH"]}
-
-
-"ALUMINIUM"/>
-    "ROUGHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_AXIAL_DEPTH"]}
-    
-    "FINISHING"/>
-        "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_SURFACE_SPEED"]}
-        "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_SPINDLE_RPM"]}
-        "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_FEED_PER_UNIT"]}
-        "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_FEED_RATE"]}
-        "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_AXIAL_DEPTH"]}
 """
+
+        elif self.debug == 2:
+            self.tool_xml = \
+                f"""\
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Tool Id="{self.tool_data["tool_name_for_xml"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
+
+            "STEEL-20"/>
+                "ROUGHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_P]["roughing"]["TOOL_RADIAL_DEPTH"]}
+                "FINISHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM"   = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE"     = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH"   = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_P]["finishing"]["TOOL_RADIAL_DEPTH"]}
+
+            "12X18H10T"/>
+                "ROUGHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_M]["roughing"]["TOOL_RADIAL_DEPTH"]}
+                "FINISHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_M]["finishing"]["TOOL_RADIAL_DEPTH"]}
+
+            "ALUMINIUM"/>
+                "ROUGHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_N]["roughing"]["TOOL_RADIAL_DEPTH"]}
+                "FINISHING"/>
+                    "TOOL_SURFACE_SPEED" = {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_SURFACE_SPEED"]}
+                    "TOOL_SPINDLE_RPM" =   {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_SPINDLE_RPM"]}
+                    "TOOL_FEED_PER_UNIT" = {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_FEED_PER_UNIT"]}
+                    "TOOL_FEED_RATE" =     {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_FEED_RATE"]}
+                    "TOOL_AXIAL_DEPTH" =   {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_AXIAL_DEPTH"]}
+                    "TOOL_RADIAL_DEPTH"  = {self.tool_data["cut_data"][config.key_iso_N]["finishing"]["TOOL_RADIAL_DEPTH"]}
+            """
             # except:
             #     self.tool_xml = "ERROR IN DEBUG XML GENERATION"
             #     logger.critical(f"{self.tool_data["tool_name_str"]} - debug XML not created")
@@ -479,7 +554,7 @@ class BaseTool:
     def set_xml_body_tool_params(self) -> str:
         xml_part_str = f"""\
     <ToolingSetup>
-        <Tool Id="{self.tool_data["tool_name_str"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
+        <Tool Id="{self.tool_data["tool_name_for_xml"]}" RefXmlId="encref_1" Type="{self.tool_data["tool_type"]}">
             <Attr DataType="boolean" Name="UseOutline" Value="false"/>
             <Attr DataType="boolean" Name="ProLibraryTool" Value="false"/>
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
