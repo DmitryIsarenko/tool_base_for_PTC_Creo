@@ -68,6 +68,21 @@ class CounterSink(BaseTool):
         t_name = self.tool_data["tool_diam_float"]
         return t_name
 
+    def create_file_name(self):
+        real_fl_len = (float(self.tool_data["CUTTER_DIAM"]) - self.get_tool_point_diameter()) / 2
+        real_fl_len = self.clear_str_from_trailing_zeros(str(real_fl_len), sep=".")
+        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".")
+
+        # l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".")
+
+        t_name = (
+            f"D{d}"
+            f"_L{real_fl_len}"
+            f"_L{l2}"
+        )
+        return t_name
+
     @staticmethod
     def get_tool_point_angle() -> int:
         return 90

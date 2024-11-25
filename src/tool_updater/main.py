@@ -1,6 +1,8 @@
 import logging
+
+from tool_updater.classes.tool_classes.axial.centerdrill import CenterDrill
 from tool_updater.classes.tool_classes.axial.drill import Drill
-from tool_updater.classes.tool_classes.axial.zenkovka import CounterSink
+from tool_updater.classes.tool_classes.axial.countersink import CounterSink
 from tool_updater.classes.tool_classes.base_tool import BaseTool
 from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
 from tool_updater.classes.tool_classes.milling.endmill import EndMill
@@ -144,18 +146,46 @@ def main():
     #     path_to_catalog_cut_data=r"/tool_updater/catalogs/milling/otrez_disk\Iscar\SGSF_cut_data.json",
     # )
 
+    # ToolGenerator.create_tools(
+    #     tool_class=CounterSink,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="zenkovka_",
+    #     file_name_suffix="",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120_cut_data.json",
+    # )
+
+    # ToolGenerator.create_tools(
+    #     tool_class=CenterDrill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="centrovka_",
+    #     file_name_suffix="",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
+
+        # file_name_prefix="centrovka_udlin_",
+        # file_name_suffix="",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L_cut_data.json",
+    # )
+
     ToolGenerator.create_tools(
-        tool_class=CounterSink,
+        tool_class=,
         target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
         teeth_num=1,
         debug_mode=0,
 
-        file_name_prefix="zenkovka_",
+        file_name_prefix="centrovka_",
         file_name_suffix="",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120_cut_data.json",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
     )
-
     pass
 
 

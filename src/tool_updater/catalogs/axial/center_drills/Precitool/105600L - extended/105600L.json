@@ -1,7 +1,7 @@
 {
   "1.00": {
     "flute_len": 15,
-    "drill_diam": 1.00,
+    "drill_diameter": 1.00,
     "drill_length": 1.25,
     "full_body_len": 120,
     "cutter_diam": 4,
@@ -12,7 +12,7 @@
   },
   "1.60": {
     "flute_len": 15,
-    "drill_diam": 1.60,
+    "drill_diameter": 1.60,
     "drill_length": 2.00,
     "full_body_len": 120,
     "cutter_diam": 5,
@@ -23,7 +23,7 @@
   },
   "2.00": {
     "flute_len": 15,
-    "drill_diam": 2.00,
+    "drill_diameter": 2.00,
     "drill_length": 2.50,
     "full_body_len": 120,
     "cutter_diam": 6,
@@ -34,7 +34,7 @@
   },
   "2.50": {
     "flute_len": 15,
-    "drill_diam": 2.50,
+    "drill_diameter": 2.50,
     "drill_length": 3.15,
     "full_body_len": 120,
     "cutter_diam": 8,
@@ -45,7 +45,7 @@
   },
   "3.15": {
     "flute_len": 15,
-    "drill_diam": 3.15,
+    "drill_diameter": 3.15,
     "drill_length": 4.00,
     "full_body_len": 120,
     "cutter_diam": 10,

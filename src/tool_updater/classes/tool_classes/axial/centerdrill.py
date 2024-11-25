@@ -1,4 +1,5 @@
 from src.tool_updater import config
+from math import pi
 import logging
 
 from tool_updater.classes.tool_classes.base_tool import BaseTool
@@ -8,8 +9,14 @@ logger = logging.getLogger(__name__)
 
 class CenterDrill(BaseTool):
     # MANUAL TOOL DATA
+
+    """
+    Если обычная центровка, то метод len_out_of_holder должен возвращать половину общей длины
+    Если удлиненная центровка, то метод len_out_of_holder должен возвращать общую длину минус длину цанги ER16 = 27.5
+    """
+
     tool_material_manual = "HSS"
-    tool_type = "COUNTERSINK"
+    tool_type = "CENTER-DRILLING"
     finishing_roughing_options = {
         "roughing": {
             "vc_modifier": 1,  # Множитель для подачи (и на зуб, и на оборот)
@@ -56,7 +63,10 @@ class CenterDrill(BaseTool):
             debug_mode=self.debug_mode,
         )
         self.point_angle = self.get_tool_point_angle()
-        self.point_diameter = self.get_tool_point_diameter()
+        # self.point_diameter = self.get_tool_point_diameter()
+        self.drill_diameter = self.get_tool_drill_diameter()
+        self.csink_angle = self.get_tool_csink_angle()
+        self.drill_length = self.get_tool_drill_length()
         self.set_tool_xml()
 
     # FORMATTING RECENTLY EXISTING/EXTRACTED DATA
@@ -68,12 +78,60 @@ class CenterDrill(BaseTool):
         t_name = self.tool_data["tool_diam_float"]
         return t_name
 
-    @staticmethod
-    def get_tool_point_angle() -> int:
-        return 90
+    def create_file_name(self):
+        d1 = self.clear_str_from_trailing_zeros(str(self.get_tool_drill_diameter()), sep=".")
+        d2 = self.clear_str_from_trailing_zeros(str(self.get_tool_cutter_diam()), sep=".")
+        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".")
 
-    def get_tool_point_diameter(self) -> int:
-        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["point_diameter"]
+        t_name = (
+            f"D{d1}"
+            f"_D{d2}"
+            f"_L{l1}"
+            f"_L{l2}"
+        )
+        return t_name
+
+    def create_tool_name_for_xml(self):
+        t_prefix = self.tool_data["file_name_prefix"].upper()
+        t_suffix = self.tool_data["file_name_suffix"].upper()
+
+        d1 = self.clear_str_from_trailing_zeros(str(self.get_tool_drill_diameter()), sep=".").replace(".", "-")
+        d2 = self.clear_str_from_trailing_zeros(str(self.get_tool_cutter_diam()), sep=".").replace(".", "-")
+        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".").replace(".", "-")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".").replace(".", "-")
+
+        t_name = (
+            f"{t_prefix}"
+            f"D{d1}"
+            f"_D{d2}"
+            f"_L{l1}"
+            f"_L{l2}"
+            f"{t_suffix}"
+        )
+        return t_name
+
+
+
+    def get_tool_point_angle(self) -> int:
+        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["point_angle"]
+
+    def get_tool_csink_angle(self):
+        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["csink_angle"]
+
+    # def get_tool_point_diameter(self) -> int:
+    #     return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["point_diameter"]
+
+    def get_tool_drill_diameter(self):
+        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["drill_diameter"]
+
+    def get_tool_drill_length(self):
+        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["drill_length"]
+
+    def get_tool_cutter_diam(self):
+        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["cutter_diam"]
+
+
 
     @staticmethod
     def clear_str_from_trailing_zeros(str_to_clean: str, sep: str):
@@ -96,8 +154,8 @@ class CenterDrill(BaseTool):
         return new_str
 
     def calc_len_out_of_holder(self):
-        return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["full_body_len"] / 2
-
+        return self.get_full_tool_length() - 27.5
+        # return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["full_body_len"] / 2
 
     def calc_feed_rate(self, key_iso_material, RPM, fin_or_rough) -> float:
         try:
@@ -123,6 +181,16 @@ class CenterDrill(BaseTool):
     def calc_radial_depth(self, key_iso_material):
         return 0
 
+    # def calc_rpm(self, Vc: int | float) -> float:
+    #     try:
+    #         rpm = 1000 * Vc / (pi * self.get_cutter_diam())
+    #         return round(rpm, ndigits=config.NDIGITS_SPINDLE)
+    #     except:
+    #         logger.critical(f"{self.tool_data["tool_name_str"]} - RPM not calculated")
+    #         return 0
+
+    # def get_cutter_diam(self):
+    #     return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["cutter_diam"]
 
     def set_xml_body_tool_params(self) -> str:
         xml_part_str = f"""\
@@ -134,10 +202,11 @@ class CenterDrill(BaseTool):
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="TOOL_MATERIAL" Value="{self.tool_data["TOOL_MATERIAL"]}"/>
             <MfgParam Name="LENGTH_UNITS" Value="{self.tool_data["LENGTH_UNITS"]}"/>
-            <MfgParam Name="CUTTER_DIAM" Value="{self.tool_data["CUTTER_DIAM"]}"/>
-            <MfgParam Name="POINT_DIAMETER" Value="{self.point_diameter}"/>
+            <MfgParam Name="DRILL_DIAMETER" Value="{self.drill_diameter}"/>
+            <MfgParam Name="CUTTER_DIAM" Value="{self.get_tool_cutter_diam()}"/>
             <MfgParam Name="POINT_ANGLE" Value="{self.point_angle}"/>
-            <MfgParam Name="GAUGE_OFFSET" Value="-"/>
+            <MfgParam Name="CSINK_ANGLE" Value="{self.csink_angle}"/>
+            <MfgParam Name="DRILL_LENGTH" Value="{self.drill_length}"/>
             <MfgParam Name="FLUTE_LENGTH" Value="{self.tool_data["FLUTE_LENGTH"]}"/>
             <MfgParam Name="LENGTH" Value="{self.tool_data["len_out_of_holder"]}"/>
             <MfgParam Name="HOLDER_DIA" Value="{self.tool_data["HOLDER_DIA"]}"/>

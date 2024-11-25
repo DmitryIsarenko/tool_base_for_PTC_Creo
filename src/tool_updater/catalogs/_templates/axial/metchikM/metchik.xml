@@ -11,20 +11,24 @@
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="LENGTH_UNITS" Value="MILLIMETER"/>
-            <MfgParam Name="CUTTER_DIAM" Value="13"/>
-            <MfgParam Name="LENGTH" Value="50"/>
             <MfgParam Name="TOOL_MATERIAL" Value="HSS"/>
             <MfgParam Name="GAUGE_X_LENGTH" Value="-"/>
-            <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
+
             <MfgParam Name="POINT_DIAMETER" Value="3"/>
+            <MfgParam Name="CUTTER_DIAM" Value="13"/>
+
             <MfgParam Name="CHAMFER_LENGTH" Value="7.5"/>
-            <MfgParam Name="TOOL_LONG_FLAG" Value="NO"/>
+            <MfgParam Name="FLUTE_LENGTH" Value="40"/>
+            <MfgParam Name="LENGTH" Value="50"/>
+
             <MfgParam Name="HOLDER_DIA" Value="28"/>
             <MfgParam Name="HOLDER_LEN" Value="50"/>
+
+            <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
+            <MfgParam Name="TOOL_LONG_FLAG" Value="NO"/>
             <MfgParam Name="COOLANT_OPTION" Value="OFF"/>
             <MfgParam Name="COOLANT_PRESSURE" Value="NONE"/>
             <MfgParam Name="SPINDLE_SENSE" Value="CW"/>
-            <MfgParam Name="FLUTE_LENGTH" Value="40"/>
             <MfgParam Name="TOOL_COMMENT" Value="-"/>
             <ToolSetUpOnWorkcell>
                 <OffsetDataCollection>
