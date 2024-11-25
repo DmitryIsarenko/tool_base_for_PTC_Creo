@@ -1,0 +1,5 @@
+"1.00": {"flute_len": 15, "drill_diam": 1.00, "drill_length": 1.25, "full_body_len": 120, "cutter_diam": 4, "Fn": 0.006, "point_angle": 118, "csink_angle": 60, "order_no": "precitool 105600L - 1.00" },
+"1.60": {"flute_len": 15, "drill_diam": 1.60, "drill_length": 2.00, "full_body_len": 120, "cutter_diam": 5, "Fn": 0.006, "point_angle": 118, "csink_angle": 60, "order_no": "precitool 105600L - 1.60" },
+"2.00": {"flute_len": 15, "drill_diam": 2.00, "drill_length": 2.50, "full_body_len": 120, "cutter_diam": 6, "Fn": 0.020, "point_angle": 118, "csink_angle": 60, "order_no": "precitool 105600L - 2.00" },
+"2.50": {"flute_len": 15, "drill_diam": 2.50, "drill_length": 3.15, "full_body_len": 120, "cutter_diam": 8, "Fn": 0.025, "point_angle": 118, "csink_angle": 60, "order_no": "precitool 105600L - 2.50" },
+"3.15": {"flute_len": 15, "drill_diam": 3.15, "drill_length": 4.00, "full_body_len": 120, "cutter_diam": 10, "Fn": 0.032, "point_angle": 118, "csink_angle": 60, "order_no": "precitool 105600L - 3.15" },

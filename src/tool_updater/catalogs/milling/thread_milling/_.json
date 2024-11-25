@@ -1,0 +1,13 @@
+{
+    "1.00": {
+        "order_no": null,
+        "full_body_len": null,
+        "full_body_diam": null,
+        "flute_len": null,
+        "flute_diam": null,
+        "neck_len": null,
+        "neck_diam": null,
+        "cutting_edge_rad": null,
+        "cutting_edge_chamfer": null
+    }
+}

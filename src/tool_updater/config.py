@@ -90,4 +90,12 @@ collet_sizes = {
         "max_diam": 20,
         "nut_diam": 50,
     },
+    "ER40": {
+        "max_diam": 26,
+        "nut_diam": 63,
+    },
+    "ER50": {
+        "max_diam": 40,
+        "nut_diam": 90,
+    },
 }

@@ -1,0 +1,8 @@
+
+"M3" :{"cutter_diam": 6.5,  "flute_length": 14.0, "point_diameter": 3.2, "full_body_len": 71, "full_body_diam": 5.0, "Fn": 0.040, "order_no": "precitool 111010 - M3"},
+"M4" :{"cutter_diam": 8.0,  "flute_length": 14.0, "point_diameter": 4.3, "full_body_len": 71, "full_body_diam": 5.0, "Fn": 0.050, "order_no": "precitool 111010 - M4"},
+"M5" :{"cutter_diam": 10.0, "flute_length": 18.0, "point_diameter": 5.3, "full_body_len": 80, "full_body_diam": 8.0, "Fn": 0.050, "order_no": "precitool 111010 - M5"},
+"M6" :{"cutter_diam": 11.0, "flute_length": 18.0, "point_diameter": 6.4, "full_body_len": 80, "full_body_diam": 8.0, "Fn": 0.050, "order_no": "precitool 111010 - M6"},
+"M8" :{"cutter_diam": 15.0, "flute_length": 22.0, "point_diameter": 8.4, "full_body_len": 100, "full_body_diam": 12.5, "Fn": 0.060, "order_no": "precitool 111010 - M8"},
+"M10":{"cutter_diam": 18.0, "flute_length": 22.0, "point_diameter": 10.5, "full_body_len": 100, "full_body_diam": 12.5, "Fn": 0.080, "order_no": "precitool 111010 - M10"},
+"M12":{"cutter_diam": 20.0, "flute_length": 22.0, "point_diameter": 13.0, "full_body_len": 100, "full_body_diam": 12.5, "Fn": 0.090, "order_no": "precitool 111010 - M12"},

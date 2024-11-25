@@ -1,5 +1,6 @@
 import logging
 from tool_updater.classes.tool_classes.axial.drill import Drill
+from tool_updater.classes.tool_classes.axial.zenkovka import CounterSink
 from tool_updater.classes.tool_classes.base_tool import BaseTool
 from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
 from tool_updater.classes.tool_classes.milling.endmill import EndMill
@@ -99,18 +100,18 @@ def main():
     #     tool_class=Drill,
     #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
     #     debug_mode=0,
-
-        # teeth_num=1,
-        # file_name_prefix="sverlo_",
-        # file_name_suffix="_2386STI",
-        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_regular_drills\2386STI.json",
-        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_regular_drills\2386STI_cut_data.json",
-
-        # teeth_num=1,
-        # file_name_prefix="sverlo_udlin_",
-        # file_name_suffix="_1692LS",
-        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_extended_drills\1692LS.json",
-        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_extended_drills\1692LS_cut_data.json",
+    #
+    #     teeth_num=1,
+    #     file_name_prefix="sverlo_",
+    #     file_name_suffix="_2386STI",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_regular_drills\2386STI.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_regular_drills\2386STI_cut_data.json",
+    #
+    #     teeth_num=1,
+    #     file_name_prefix="sverlo_udlin_",
+    #     file_name_suffix="_1692LS",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_extended_drills\1692LS.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\drills\Osawa\hss_extended_drills\1692LS_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -139,9 +140,21 @@ def main():
     #
     #     file_name_prefix="disk_",
     #     file_name_suffix="_SGSF",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk\Iscar\SGSF.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk\Iscar\SGSF_cut_data.json",
+    #     path_to_catalog_geometry=r"/tool_updater/catalogs/milling/otrez_disk\Iscar\SGSF.json",
+    #     path_to_catalog_cut_data=r"/tool_updater/catalogs/milling/otrez_disk\Iscar\SGSF_cut_data.json",
     # )
+
+    ToolGenerator.create_tools(
+        tool_class=CounterSink,
+        target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+        teeth_num=1,
+        debug_mode=0,
+
+        file_name_prefix="zenkovka_",
+        file_name_suffix="",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120_cut_data.json",
+    )
 
     pass
 

@@ -43,7 +43,7 @@ class DiskOtreznoi(BaseTool):
         "iso_H": 1,
     }
 
-    path_to_holder_geometry_catalog = r"C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\otrez_disk\Iscar\holders_for_SGSF.json"
+    path_to_holder_geometry_catalog = r"/tool_updater/catalogs/milling/otrez_disk\Iscar\holders_for_SGSF.json"
 
     def __init__(self,
                  tool_size_from_geom_catalogue: str,

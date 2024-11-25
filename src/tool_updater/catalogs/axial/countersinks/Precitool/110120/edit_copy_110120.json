@@ -1,0 +1,10 @@
+
+"6.3": {"cutter_diam": 6.3, "flute_length": 5.0, "point_diameter": 1.5, "full_body_len": 45, "full_body_diam": 5.0, "Fn": 0.040, "order_no": "precitool 110120 - 6.3"},
+"8.3": {"cutter_diam": 8.3, "flute_length": 7.0, "point_diameter": 2.0, "full_body_len": 50, "full_body_diam": 6.0, "Fn": 0.060, "order_no": "precitool 110120 - 8.3"},
+"10.4": {"cutter_diam": 10.4, "flute_length": 8.0, "point_diameter": 2.5, "full_body_len": 50, "full_body_diam": 6.0, "Fn": 0.060, "order_no": "precitool 110120 - 10.4"},
+"12.4": {"cutter_diam": 12.4, "flute_length": 10.0, "point_diameter": 2.8, "full_body_len": 56, "full_body_diam": 8.0, "Fn": 0.070, "order_no": "precitool 110120 - 12.4"},
+"15.0": {"cutter_diam": 15.0, "flute_length": 11.0, "point_diameter": 3.2, "full_body_len": 60, "full_body_diam": 10.0, "Fn": 0.070, "order_no": "precitool 110120 - 15.0"},
+"16.5": {"cutter_diam": 16.5, "flute_length": 11.0, "point_diameter": 3.2, "full_body_len": 60, "full_body_diam": 10.0, "Fn": 0.080, "order_no": "precitool 110120 - 16.5"},
+"20.5": {"cutter_diam": 20.5, "flute_length": 13.0, "point_diameter": 3.5, "full_body_len": 63, "full_body_diam": 10.0, "Fn": 0.090, "order_no": "precitool 110120 - 20.5"},
+"25.0": {"cutter_diam": 25.0, "flute_length": 16.0, "point_diameter": 3.8, "full_body_len": 67, "full_body_diam": 10.0, "Fn": 0.120, "order_no": "precitool 110120 - 25.0"},
+"31.0": {"cutter_diam": 31.0, "flute_length": 19.0, "point_diameter": 4.2, "full_body_len": 71, "full_body_diam": 12.0, "Fn": 0.120, "order_no": "precitool 110120 - 31.0"},
