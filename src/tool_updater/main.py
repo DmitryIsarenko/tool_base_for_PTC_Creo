@@ -3,6 +3,7 @@ import logging
 from tool_updater.classes.tool_classes.axial.centerdrill import CenterDrill
 from tool_updater.classes.tool_classes.axial.drill import Drill
 from tool_updater.classes.tool_classes.axial.countersink import CounterSink
+from tool_updater.classes.tool_classes.axial.tap import Tap
 from tool_updater.classes.tool_classes.base_tool import BaseTool
 from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
 from tool_updater.classes.tool_classes.milling.endmill import EndMill
@@ -175,16 +176,43 @@ def main():
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L_cut_data.json",
     # )
 
+    # ToolGenerator.create_tools(
+    #     tool_class=Tap,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="metchik_",
+    #     file_name_suffix="_gluhoi",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850_cut_data.json",
+
+        # file_name_prefix="metchik_",
+        # file_name_suffix="_skvoznoi",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\through_hole\132640\132640.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\through_hole\132640\132640_cut_data.json",
+        #
+        # file_name_prefix="metchik_",
+        # file_name_suffix="_gluhoi",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\blind_hole\137805\137805.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\blind_hole\137805\137805_cut_data.json",
+        #
+    #     file_name_prefix="metchik_",
+    #     file_name_suffix="_skvoznoi",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300_cut_data.json",
+    # )
+
     ToolGenerator.create_tools(
-        tool_class=,
+        tool_class=Tap,
         target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
         teeth_num=1,
         debug_mode=0,
 
-        file_name_prefix="centrovka_",
-        file_name_suffix="",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
+        file_name_prefix="metchik_",
+        file_name_suffix="_gluhoi",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850_cut_data.json",
     )
     pass
 

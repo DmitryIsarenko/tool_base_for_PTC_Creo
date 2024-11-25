@@ -1,5 +1,7 @@
 {
   "M1": {
+    "flute_len": 8,
+    "flute_diam": 1,
     "thread_pitch": 0.25,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -9,6 +11,8 @@
     "order_no": "garant 132640 M1"
   },
   "M1.2": {
+    "flute_len": 8,
+    "flute_diam": 1.2,
     "thread_pitch": 0.25,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -18,6 +22,8 @@
     "order_no": "garant 132640 M1.2"
   },
   "M1.4": {
+    "flute_len": 8,
+    "flute_diam": 1.4,
     "thread_pitch": 0.30,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -27,6 +33,8 @@
     "order_no": "garant 132640 M1.4"
   },
   "M1.6": {
+    "flute_len": 8,
+    "flute_diam": 1.6,
     "thread_pitch": 0.35,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -36,6 +44,8 @@
     "order_no": "garant 132640 M1.6"
   },
   "M1.7": {
+    "flute_len": 8,
+    "flute_diam": 1.7,
     "thread_pitch": 0.35,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -45,6 +55,8 @@
     "order_no": "garant 132640 M1.7"
   },
   "M1.8": {
+    "flute_len": 8,
+    "flute_diam": 1.8,
     "thread_pitch": 0.35,
     "full_body_len": 40,
     "shank_diam": 2.5,
@@ -54,6 +66,8 @@
     "order_no": "garant 132640 M1.8"
   },
   "M2": {
+    "flute_len": 8,
+    "flute_diam": 2,
     "thread_pitch": 0.40,
     "full_body_len": 45,
     "shank_diam": 2.8,
@@ -63,6 +77,8 @@
     "order_no": "garant 132640 M2"
   },
   "M2.2": {
+    "flute_len": 9,
+    "flute_diam": 2.2,
     "thread_pitch": 0.45,
     "full_body_len": 45,
     "shank_diam": 2.8,
@@ -72,6 +88,8 @@
     "order_no": "garant 132640 M2.2"
   },
   "M2.3": {
+    "flute_len": 9,
+    "flute_diam": 2.3,
     "thread_pitch": 0.40,
     "full_body_len": 45,
     "shank_diam": 2.8,
@@ -81,6 +99,8 @@
     "order_no": "garant 132640 M2.3"
   },
   "M2.5": {
+    "flute_len": 9,
+    "flute_diam": 2.5,
     "thread_pitch": 0.45,
     "full_body_len": 50,
     "shank_diam": 2.8,
@@ -90,6 +110,8 @@
     "order_no": "garant 132640 M2.5"
   },
   "M2.6": {
+    "flute_len": 9,
+    "flute_diam": 2.6,
     "thread_pitch": 0.45,
     "full_body_len": 50,
     "shank_diam": 2.8,
@@ -99,6 +121,8 @@
     "order_no": "garant 132640 M2.6"
   },
   "M3": {
+    "flute_len": 11,
+    "flute_diam": 3,
     "thread_pitch": 0.50,
     "full_body_len": 56,
     "shank_diam": 3.5,
@@ -108,6 +132,8 @@
     "order_no": "garant 132640 M3"
   },
   "M3.5": {
+    "flute_len": 13,
+    "flute_diam": 3.5,
     "thread_pitch": 0.60,
     "full_body_len": 56,
     "shank_diam": 4,
@@ -117,6 +143,8 @@
     "order_no": "garant 132640 M3.5"
   },
   "M4": {
+    "flute_len": 13,
+    "flute_diam": 4,
     "thread_pitch": 0.70,
     "full_body_len": 63,
     "shank_diam": 4.5,
@@ -126,6 +154,8 @@
     "order_no": "garant 132640 M4"
   },
   "M5": {
+    "flute_len": 16,
+    "flute_diam": 5,
     "thread_pitch": 0.80,
     "full_body_len": 70,
     "shank_diam": 6,
@@ -135,6 +165,8 @@
     "order_no": "garant 132640 M5"
   },
   "M6": {
+    "flute_len": 19,
+    "flute_diam": 6,
     "thread_pitch": 1.00,
     "full_body_len": 80,
     "shank_diam": 6,
@@ -144,6 +176,8 @@
     "order_no": "garant 132640 M6"
   },
   "M7": {
+    "flute_len": 19,
+    "flute_diam": 7,
     "thread_pitch": 1.00,
     "full_body_len": 80,
     "shank_diam": 7,
@@ -153,6 +187,8 @@
     "order_no": "garant 132640 M7"
   },
   "M8": {
+    "flute_len": 22,
+    "flute_diam": 8,
     "thread_pitch": 1.25,
     "full_body_len": 90,
     "shank_diam": 8,
@@ -162,6 +198,8 @@
     "order_no": "garant 132640 M8"
   },
   "M10": {
+    "flute_len": 24,
+    "flute_diam": 10,
     "thread_pitch": 1.50,
     "full_body_len": 100,
     "shank_diam": 10,
@@ -171,6 +209,8 @@
     "order_no": "garant 132640 M10"
   },
   "M12": {
+    "flute_len": 28,
+    "flute_diam": 12,
     "thread_pitch": 1.75,
     "full_body_len": 110,
     "shank_diam": 9,
@@ -180,6 +220,8 @@
     "order_no": "garant 132640 M12"
   },
   "M14": {
+    "flute_len": 30,
+    "flute_diam": 14,
     "thread_pitch": 2.00,
     "full_body_len": 110,
     "shank_diam": 11,
@@ -189,6 +231,8 @@
     "order_no": "garant 132640 M14"
   },
   "M16": {
+    "flute_len": 32,
+    "flute_diam": 16,
     "thread_pitch": 2.00,
     "full_body_len": 110,
     "shank_diam": 12,
@@ -198,6 +242,8 @@
     "order_no": "garant 132640 M16"
   },
   "M18": {
+    "flute_len": 34,
+    "flute_diam": 18,
     "thread_pitch": 2.50,
     "full_body_len": 125,
     "shank_diam": 14,
@@ -207,6 +253,8 @@
     "order_no": "garant 132640 M18"
   },
   "M20": {
+    "flute_len": 36,
+    "flute_diam": 20,
     "thread_pitch": 2.50,
     "full_body_len": 140,
     "shank_diam": 16,
@@ -216,6 +264,8 @@
     "order_no": "garant 132640 M20"
   },
   "M22": {
+    "flute_len": 38,
+    "flute_diam": 22,
     "thread_pitch": 2.50,
     "full_body_len": 140,
     "shank_diam": 18,
@@ -225,6 +275,8 @@
     "order_no": "garant 132640 M22"
   },
   "M24": {
+    "flute_len": 40,
+    "flute_diam": 24,
     "thread_pitch": 3.00,
     "full_body_len": 160,
     "shank_diam": 18,
@@ -234,6 +286,8 @@
     "order_no": "garant 132640 M24"
   },
   "M27": {
+    "flute_len": 42,
+    "flute_diam": 27,
     "thread_pitch": 3.00,
     "full_body_len": 160,
     "shank_diam": 20,
@@ -243,6 +297,8 @@
     "order_no": "garant 132640 M27"
   },
   "M30": {
+    "flute_len": 44,
+    "flute_diam": 30,
     "thread_pitch": 3.50,
     "full_body_len": 180,
     "shank_diam": 22,

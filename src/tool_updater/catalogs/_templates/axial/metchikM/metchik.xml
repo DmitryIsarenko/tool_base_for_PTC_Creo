@@ -2,7 +2,7 @@
 <MfgSetupDocument>
     <DocType>PRO_NC_CUTTING_TOOL_SETUP</DocType>
     <DocTitle>Инфо режущего инструмента</DocTitle>
-    <DateTime>2024-11-22T10:10:34</DateTime>
+    <DateTime>2024-11-25T17:23:16</DateTime>
     <ApplicationInfo AppName="Creo" AppVersion="8.0.11.0" FtVersion="360051" Language="russian" MdlVersion="2012"/>
     <ToolingSetup>
         <Tool Id="METCHIK" RefXmlId="encref_1" Type="TAPPING">
@@ -11,25 +11,38 @@
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="LENGTH_UNITS" Value="MILLIMETER"/>
+            <MfgParam Name="CUTTER_DIAM" Value="13"/>
+            <MfgParam Name="LENGTH" Value="50"/>
             <MfgParam Name="TOOL_MATERIAL" Value="HSS"/>
             <MfgParam Name="GAUGE_X_LENGTH" Value="-"/>
-
+            <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
             <MfgParam Name="POINT_DIAMETER" Value="3"/>
-            <MfgParam Name="CUTTER_DIAM" Value="13"/>
-
             <MfgParam Name="CHAMFER_LENGTH" Value="7.5"/>
-            <MfgParam Name="FLUTE_LENGTH" Value="40"/>
-            <MfgParam Name="LENGTH" Value="50"/>
-
+            <MfgParam Name="TOOL_LONG_FLAG" Value="NO"/>
             <MfgParam Name="HOLDER_DIA" Value="28"/>
             <MfgParam Name="HOLDER_LEN" Value="50"/>
-
-            <MfgParam Name="GAUGE_Z_LENGTH" Value="-"/>
-            <MfgParam Name="TOOL_LONG_FLAG" Value="NO"/>
             <MfgParam Name="COOLANT_OPTION" Value="OFF"/>
             <MfgParam Name="COOLANT_PRESSURE" Value="NONE"/>
             <MfgParam Name="SPINDLE_SENSE" Value="CW"/>
+            <MfgParam Name="FLUTE_LENGTH" Value="40"/>
             <MfgParam Name="TOOL_COMMENT" Value="-"/>
+            <ToolCutData>
+                <Material>
+                    <MfgParam Name="STOCK_MATERIAL" Value="ALUMINIUM"/>
+                </Material>
+                <CutDataUnitSystem>
+                    <MfgParam Name="CUT_DATA_UNITS" Value="METRIC"/>
+                </CutDataUnitSystem>
+                <Technology>
+                    <Condition>
+                        <MfgParam Name="APPLICATION_TYPE" Value="ROUGHING"/>
+                    </Condition>
+                    <MfgParam Name="TOOL_FEED_PER_UNIT" Unit="mm_per_rev" Value="1.25"/>
+                    <MfgParam Name="TOOL_SPINDLE_RPM" Unit="rev_per_min" Value="30"/>
+                    <MfgParam Name="TOOL_SURFACE_SPEED" Unit="m_per_min" Value="1.22522"/>
+                    <MfgParam Name="TOOL_FEED_RATE" Unit="mm_per_min" Value="37.5"/>
+                </Technology>
+            </ToolCutData>
             <ToolSetUpOnWorkcell>
                 <OffsetDataCollection>
                     <OffsetData Comment="" OffsetZ="0.000000" Register="-1" Tip="1"/>
