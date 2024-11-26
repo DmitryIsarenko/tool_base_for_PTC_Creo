@@ -11,6 +11,7 @@
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="LENGTH_UNITS" Value="MILLIMETER"/>
+
             <MfgParam Name="CUTTER_DIAM" Value="9"/>
             <MfgParam Name="CORNER_RADIUS" Value="1.5"/>
             <MfgParam Name="SHANK_DIAM" Value="10"/>

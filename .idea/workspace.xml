@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/vnutr_rad_mill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/metchikG/metchik.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/metchikG/metchik.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/metchikM/metchik.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/metchikM/metchik.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/137805.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/137805.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/137805_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/137805_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/edit_copy_137805.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/blind_hole/137805/edit_copy_137805.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/133300.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/133300.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/133300_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/133300_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/edit_copy_133300.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/inch/through_hole/133300/edit_copy_133300.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/135850.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/135850.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/135850_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/135850_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/edit_copy_135850.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/blind_hole/135850/edit_copy_135850.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/132640.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/132640.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/132640_cut_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/132640_cut_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/edit_copy_132640.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/taps/Garant/metric/through_hole/132640/edit_copy_132640.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/tap.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/tap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/milling/vnutr_R/fr_vnutr_r1-5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/milling/vnutr_R/fr_vnutr_r1-5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +44,7 @@
     "Python.transform_cut_data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "taps",
+    "git-widget-placeholder": "vnutr__R",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/classes/tool_classes/axial",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
@@ -228,15 +215,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/tool_updater/classes/tool_classes/base_tool.py</url>
-          <line>400</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self.tool_data[&quot;LENGTH&quot;]" language="Python" />

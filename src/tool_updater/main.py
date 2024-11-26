@@ -9,6 +9,7 @@ from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
 from tool_updater.classes.tool_classes.milling.endmill import EndMill
 from tool_updater.classes.tool_classes.milling.sphere_mill import BallMill
 from tool_updater.classes.tool_classes.milling.toroid_mill import ToroidMill
+from tool_updater.classes.tool_classes.milling.vnutr_rad_mill import VnutrRadMill
 from tool_updater.classes.tool_generator import ToolGenerator
 
 logger = logging.getLogger("src")
@@ -204,15 +205,15 @@ def main():
     # )
 
     ToolGenerator.create_tools(
-        tool_class=Tap,
+        tool_class=VnutrRadMill,
         target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-        teeth_num=1,
+        teeth_num=4,
         debug_mode=0,
 
-        file_name_prefix="metchik_",
-        file_name_suffix="_gluhoi",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850_cut_data.json",
+        file_name_prefix="vnutr_rad_",
+        file_name_suffix="",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815_cut_data.json",
     )
     pass
 
