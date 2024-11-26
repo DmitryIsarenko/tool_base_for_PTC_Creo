@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48ac9736-8a74-4e0d-b305-20a2e9cc5ab7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/milling/vnutr_rad_mill.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/milling/vnutr_R/fr_vnutr_r1-5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/milling/vnutr_R/fr_vnutr_r1-5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/razvertka/razvertka.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/_templates/axial/razvertka/razvertka.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Garant/162961/162961.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Garant/162961/162961.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Garant/162961/edit_copy_162961.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Garant/162961/edit_copy_162961.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Guhring/1409/1409.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Guhring/1409/1409.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Guhring/1409/edit_copy_1409.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/catalogs/axial/reamers/Guhring/1409/edit_copy_1409.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/reamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/classes/tool_classes/axial/reamer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool_updater/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool_updater/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +48,7 @@
     "Python.transform_cut_data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "vnutr__R",
+    "git-widget-placeholder": "reamers",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/tool_base/tool_base/src/tool_updater/classes/tool_classes/axial",
     "settings.editor.selected.configurable": "preferences.keymap"
   }

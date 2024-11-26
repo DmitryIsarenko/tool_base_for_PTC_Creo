@@ -3,6 +3,7 @@ import logging
 from tool_updater.classes.tool_classes.axial.centerdrill import CenterDrill
 from tool_updater.classes.tool_classes.axial.drill import Drill
 from tool_updater.classes.tool_classes.axial.countersink import CounterSink
+from tool_updater.classes.tool_classes.axial.reamer import Reamer
 from tool_updater.classes.tool_classes.axial.tap import Tap
 from tool_updater.classes.tool_classes.base_tool import BaseTool
 from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
@@ -204,16 +205,33 @@ def main():
     #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300_cut_data.json",
     # )
 
+    # ToolGenerator.create_tools(
+    #     tool_class=VnutrRadMill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=4,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="vnutr_rad_",
+    #     file_name_suffix="",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815_cut_data.json",
+    # )
+    #
     ToolGenerator.create_tools(
-        tool_class=VnutrRadMill,
+        tool_class=Reamer,
         target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-        teeth_num=4,
+        teeth_num=1,
         debug_mode=0,
 
-        file_name_prefix="vnutr_rad_",
+        file_name_prefix="razvertka_",
         file_name_suffix="",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815_cut_data.json",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409_cut_data.json",
+
+        # file_name_prefix="razvertka_udlin_",
+        # file_name_suffix="",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961_cut_data.json",
     )
     pass
 
