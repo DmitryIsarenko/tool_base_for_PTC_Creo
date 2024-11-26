@@ -154,7 +154,14 @@ class CenterDrill(BaseTool):
         return new_str
 
     def calc_len_out_of_holder(self):
-        return self.get_full_tool_length() - 27.5
+        out_of_er = self.get_full_tool_length() - 27.5
+        flute = self.get_tool_flute_length()
+        diam = float(self.get_tool_cutter_diam())
+        if out_of_er >= flute:
+            return out_of_er
+        else:
+            return flute + diam
+
         # return self.catalog_tool_geometry[self.create_tool_name_for_geom_catalogue()]["full_body_len"] / 2
 
     def calc_feed_rate(self, key_iso_material, RPM, fin_or_rough) -> float:

@@ -124,18 +124,18 @@ def main():
     #     tool_class=ToroidMill,
     #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
     #     debug_mode=0,
-    #
-    #     teeth_num=3,
-    #     file_name_prefix="freza_toroid_",
-    #     file_name_suffix="_UA100-R3",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\toroidal_endmills\Gesac\isoN\UA100-R3\UA100-R3.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\toroidal_endmills\Gesac\isoN\UA100-R3\UA100-R3_cut_data.json",
 
-        # teeth_num=4,
+        # teeth_num=3,
         # file_name_prefix="freza_toroid_",
-        # file_name_suffix="_SS600-R4",
-        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\toroidal_endmills\Gesac\isoP_isoM\SS600-R4\SS600-R4.json",
-        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\toroidal_endmills\Gesac\isoP_isoM\SS600-R4\SS600-R4_cut_data.json",
+        # file_name_suffix="_UA100-R3",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\toroidal_endmills\Gesac\isoN\UA100-R3\UA100-R3.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\toroidal_endmills\Gesac\isoN\UA100-R3\UA100-R3_cut_data.json",
+
+    #     teeth_num=4,
+    #     file_name_prefix="freza_toroid_",
+    #     file_name_suffix="_SS600-R4",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\toroidal_endmills\Gesac\isoP_isoM\SS600-R4\SS600-R4.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\toroidal_endmills\Gesac\isoP_isoM\SS600-R4\SS600-R4_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -157,53 +157,53 @@ def main():
     #     debug_mode=0,
     #
     #     file_name_prefix="zenkovka_",
-    #     file_name_suffix="",
+    #     file_name_suffix="_110120",
     #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120.json",
     #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120_cut_data.json",
     # )
 
-    # ToolGenerator.create_tools(
-    #     tool_class=CenterDrill,
-    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-    #     teeth_num=1,
-    #     debug_mode=0,
-    #
-    #     file_name_prefix="centrovka_",
-    #     file_name_suffix="",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
+    ToolGenerator.create_tools(
+        tool_class=CenterDrill,
+        target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+        teeth_num=1,
+        debug_mode=0,
+
+        file_name_prefix="centrovka_",
+        file_name_suffix="_105200",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
 
         # file_name_prefix="centrovka_udlin_",
-        # file_name_suffix="",
+        # file_name_suffix="_105600L",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L_cut_data.json",
-    # )
+    )
 
     # ToolGenerator.create_tools(
     #     tool_class=Tap,
     #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
     #     teeth_num=1,
     #     debug_mode=0,
-    #
-    #     file_name_prefix="metchik_",
-    #     file_name_suffix="_gluhoi",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850_cut_data.json",
 
         # file_name_prefix="metchik_",
-        # file_name_suffix="_skvoznoi",
+        # file_name_suffix="_gluhoi_135850",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\blind_hole\135850\135850_cut_data.json",
+
+        # file_name_prefix="metchik_",
+        # file_name_suffix="_skvoznoi_132640",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\through_hole\132640\132640.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\metric\through_hole\132640\132640_cut_data.json",
         #
         # file_name_prefix="metchik_",
-        # file_name_suffix="_gluhoi",
+        # file_name_suffix="_gluhoi_137805",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\blind_hole\137805\137805.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\blind_hole\137805\137805_cut_data.json",
         #
-    #     file_name_prefix="metchik_",
-    #     file_name_suffix="_skvoznoi",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300_cut_data.json",
+        # file_name_prefix="metchik_",
+        # file_name_suffix="_skvoznoi_133300",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\taps\Garant\inch\through_hole\133300\133300_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -213,7 +213,7 @@ def main():
     #     debug_mode=0,
     #
     #     file_name_prefix="vnutr_rad_",
-    #     file_name_suffix="",
+    #     file_name_suffix="_178815",
     #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815.json",
     #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\internal_R\Precitool\178815\178815_cut_data.json",
     # )
@@ -223,29 +223,53 @@ def main():
     #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
     #     teeth_num=1,
     #     debug_mode=0,
-    #
-    #     file_name_prefix="razvertka_",
-    #     file_name_suffix="",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409_cut_data.json",
+
+        # file_name_prefix="razvertka_",
+        # file_name_suffix="_1409",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1409\1409_cut_data.json",
 
         # file_name_prefix="razvertka_udlin_",
-        # file_name_suffix="",
+        # file_name_suffix="_162961",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961_cut_data.json",
     # )
 
-    ToolGenerator.create_tools(
-        tool_class=CounterBore,
-        target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-        teeth_num=1,
-        debug_mode=0,
+    # ToolGenerator.create_tools(
+    #     tool_class=CounterBore,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="cekovka_",
+    #     file_name_suffix="_111010",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
+    # )
 
-        file_name_prefix="cekovka_",
-        file_name_suffix="",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
-    )
+    # ToolGenerator.create_tools(
+    #     tool_class=ThreadMill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="cekovka_",
+    #     file_name_suffix="_111010",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
+    # )
+
+    # ToolGenerator.create_tools(
+    #     tool_class=GribMill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="cekovka_",
+    #     file_name_suffix="_111010",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
+    # )
     pass
 
 

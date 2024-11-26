@@ -89,8 +89,6 @@ class ToroidMill(BaseTool):
         t_name = self.tool_data["tool_diam_float"]
         return t_name
 
-
-
     def create_tool_name_for_xml(self):
         t_prefix = self.tool_data["file_name_prefix"].upper()
         t_suffix = self.tool_data["file_name_suffix"].upper()
@@ -98,28 +96,30 @@ class ToroidMill(BaseTool):
         d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".").replace(".", "-")
         l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".").replace(".", "-")
         l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".").replace(".", "-")
-        r = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".").replace(".", "-")
-
+        r = self.clear_str_from_trailing_zeros(str(self.get_tool_corner_rad_from_complex_size()), sep=".").replace(".", "-")
 
         t_name = (f"{t_prefix}"
-                  f"D{self.tool_data["CUTTER_DIAM"].replace(".", "-")}"
-                  f"-R{self.get_tool_corner_rad_from_complex_size()}"
-                  f"_L{self.tool_data["FLUTE_LENGTH"]}"
-                  f"-L{self.tool_data["LENGTH"]}"
+                  f"D{d}"
+                  f"_R{r}"
+                  f"_L{l1}"
+                  f"-L{l2}"
                   f"{t_suffix}"
                   )
         return t_name
 
     def create_file_name(self):
-        t_name = (f"D{self.tool_data["tool_diam_float"]}"
-                  f"-R{self.get_tool_corner_rad_from_complex_size()}"
-                  f"_L{self.tool_data["FLUTE_LENGTH"]}"
-                  f"-L{self.tool_data["LENGTH"]}"
-                  )
+        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".")
+        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".")
+        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".")
+        r = self.clear_str_from_trailing_zeros(str(self.get_tool_corner_rad_from_complex_size()), sep=".")
+
+        t_name = (
+                  f"D{d}"
+                  f"_R{r}"
+                  f"_L{l1}"
+                  f"-L{l2}"
+        )
         return t_name
-
-
-
 
     def calc_feed_rate(self, key_iso_material, RPM, fin_or_rough) -> float:
         try:
