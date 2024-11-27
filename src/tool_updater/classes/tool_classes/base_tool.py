@@ -423,16 +423,16 @@ class BaseTool:
     # XML DEFINITION
     def set_tool_xml(self):
         if self.debug == 0:
-            try:
+            # try:
                 self.tool_xml = ""
                 self.tool_xml += self.set_xml_head()
                 self.tool_xml += self.set_xml_body_tool_params()
                 self.tool_xml += self.set_xml_body_tool_cut_data()
                 self.tool_xml += self.set_xml_bom_components()
                 self.tool_xml += self.set_xml_tail()
-            except:
-                self.tool_xml = "ERROR IN XML GENERATION"
-                logger.critical(f"{self.tool_data["tool_name_str"]} - XML not created")
+            # except:
+            #     self.tool_xml = "ERROR IN XML GENERATION"
+            #     logger.critical(f"{self.tool_data["tool_name_str"]} - XML not created")
         elif self.debug == 1:
             self.tool_xml = \
                 f"""\

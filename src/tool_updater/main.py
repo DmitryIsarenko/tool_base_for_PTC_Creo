@@ -7,9 +7,12 @@ from tool_updater.classes.tool_classes.axial.countersink import CounterSink
 from tool_updater.classes.tool_classes.axial.reamer import Reamer
 from tool_updater.classes.tool_classes.axial.tap import Tap
 from tool_updater.classes.tool_classes.base_tool import BaseTool
+from tool_updater.classes.tool_classes.milling.chamfer_mill import ChamferMill
 from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
 from tool_updater.classes.tool_classes.milling.endmill import EndMill
+from tool_updater.classes.tool_classes.milling.grib_mill import GribMill
 from tool_updater.classes.tool_classes.milling.sphere_mill import BallMill
+from tool_updater.classes.tool_classes.milling.threadmill import ThreadMill
 from tool_updater.classes.tool_classes.milling.toroid_mill import ToroidMill
 from tool_updater.classes.tool_classes.milling.vnutr_rad_mill import VnutrRadMill
 from tool_updater.classes.tool_generator import ToolGenerator
@@ -146,8 +149,8 @@ def main():
     #
     #     file_name_prefix="disk_",
     #     file_name_suffix="_SGSF",
-    #     path_to_catalog_geometry=r"/tool_updater/catalogs/milling/otrez_disk\Iscar\SGSF.json",
-    #     path_to_catalog_cut_data=r"/tool_updater/catalogs/milling/otrez_disk\Iscar\SGSF_cut_data.json",
+    #     path_to_catalog_geometry=r"C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\otrez_disk\Iscar\SGSF.json",
+    #     path_to_catalog_cut_data=r"C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\otrez_disk\Iscar\SGSF_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -162,22 +165,22 @@ def main():
     #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\countersinks\Precitool\110120\110120_cut_data.json",
     # )
 
-    ToolGenerator.create_tools(
-        tool_class=CenterDrill,
-        target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-        teeth_num=1,
-        debug_mode=0,
-
-        file_name_prefix="centrovka_",
-        file_name_suffix="_105200",
-        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
-        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
+    # ToolGenerator.create_tools(
+    #     tool_class=CenterDrill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="centrovka_",
+    #     file_name_suffix="_105200",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105200\105200_cut_data.json",
 
         # file_name_prefix="centrovka_udlin_",
         # file_name_suffix="_105600L",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\center_drills\Precitool\105600L - extended\105600L_cut_data.json",
-    )
+    # )
 
     # ToolGenerator.create_tools(
     #     tool_class=Tap,
@@ -233,6 +236,11 @@ def main():
         # file_name_suffix="_162961",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Garant\162961\162961_cut_data.json",
+
+    #     file_name_prefix="razvertka_",
+    #     file_name_suffix="_1411",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1411\1411.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\reamers\Guhring\1411\1411_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -248,15 +256,25 @@ def main():
     # )
 
     # ToolGenerator.create_tools(
-    #     tool_class=ThreadMill,
+    #     tool_class=ChamferMill,
     #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-    #     teeth_num=1,
+    #     teeth_num=4,
     #     debug_mode=0,
-    #
-    #     file_name_prefix="cekovka_",
-    #     file_name_suffix="_111010",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
+
+        # file_name_prefix="uglovaya_",
+        # file_name_suffix="_UP210-L60",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L60.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L60_cut_data.json",
+
+        # file_name_prefix="uglovaya_",
+        # file_name_suffix="_UP210-L90",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L90.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L90_cut_data.json",
+        #
+    #     file_name_prefix="uglovaya_",
+    #     file_name_suffix="_UP210-L120",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L120.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\chamfer_mills\Gesac\UP210\UP210-L120_cut_data.json",
     # )
 
     # ToolGenerator.create_tools(
@@ -265,10 +283,37 @@ def main():
     #     teeth_num=1,
     #     debug_mode=0,
     #
-    #     file_name_prefix="cekovka_",
-    #     file_name_suffix="_111010",
-    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010.json",
-    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\axial\counterbores\Precitool\111010\111010_cut_data.json",
+    #     file_name_prefix="grib_",
+    #     file_name_suffix="_GRIT",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\GRIT\GRIT.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\GRIT\GRIT_cut_data.json",
+
+        # file_name_prefix="grib_",
+        # file_name_suffix="_TS-H",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\TS-H\TS-H.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\TS-H\TS-H_cut_data.json",
+        #
+        # file_name_prefix="grib_",
+        # file_name_suffix="_TS-N",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\TS-N\TS-N.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\TS-N\TS-N_cut_data.json",
+    # )
+
+    # ToolGenerator.create_tools(
+    #     tool_class=ThreadMill,
+    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+    #     teeth_num=1,
+    #     debug_mode=0,
+    #
+    #     file_name_prefix="rezbofreza_",
+    #     file_name_suffix="_helicool",
+    #     path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\thread_milling\Vardex\Helicool\metric\helicool_m.json",
+    #     path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\thread_milling\Vardex\Helicool\metric\helicool_m_cut_data.json",
+
+        # file_name_prefix="rezbofreza_",
+        # file_name_suffix="_helicool",
+        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\thread_milling\Vardex\Helicool\inch\helicool_g.json",
+        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\thread_milling\Vardex\Helicool\inch\helicool_g_cut_data.json",
     # )
     pass
 

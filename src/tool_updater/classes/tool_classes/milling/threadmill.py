@@ -6,7 +6,7 @@ from tool_updater.classes.tool_classes.base_tool import BaseTool
 logger = logging.getLogger(__name__)
 
 
-class EndMill(BaseTool):
+class ThreadMill(BaseTool):
 
     # MANUAL TOOL DATA
     tool_material_manual = "HSS"
@@ -67,6 +67,64 @@ class EndMill(BaseTool):
             file_name_suffix=self.file_name_suffix,
             debug_mode=self.debug_mode,
         )
+        self.insert_length = self.get_insert_length()
+        self.end_offset = self.get_end_offset()
+
+    def get_insert_length(self):
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["cutter_len"]
+
+    def get_end_offset(self):
+        return 0
+
+    def get_tool_teeth_num(self):
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["feathers_num"]
+
+    def get_tool_diam_float(self):
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["flute_diam"]
+
+    def get_cutter_diam(self):
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["flute_diam"]
+
+    def get_tool_flute_length(self) -> float:
+        l = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["cutter_len"]
+        return l
+
+    def calc_axial_depth(self, key_iso_material) -> float:
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["cutter_len"]
+
+    def get_thread_step(self):
+        try:
+            return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["thread_pitch"]
+        except KeyError:
+            return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["threads_per_inch"]
+
+    def get_full_tool_length(self) -> float:
+        return self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["full_body_len"]
+
+    def calc_len_out_of_holder(self):
+        full_body_len = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["full_body_len"]
+        try:
+            flute_len = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["cutter_len_plus_csink"]
+        except KeyError:
+            flute_len = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["cutter_len"]
+
+        flute_diam = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["flute_diam"]
+
+        len_1 = max([flute_len + flute_diam, full_body_len / 2])
+        return round(len_1, ndigits=1)
+
+    def calc_nut_diam(self) -> int:
+        # try:
+        cut_d = self.get_cutter_diam()
+        nut_diam = 0
+        for er in config.collet_sizes:
+            max_d: int = config.collet_sizes[er]["max_diam"]
+            if cut_d <= max_d:
+                nut_diam: int = config.collet_sizes[er]["nut_diam"]
+                break
+            else:
+                continue
+        return nut_diam
 
     # FORMATTING RECENTLY EXISTING/EXTRACTED DATA
     def create_tool_name_for_geom_catalogue(self):
@@ -80,14 +138,15 @@ class EndMill(BaseTool):
     def create_tool_name_for_xml(self):
         t_prefix = self.tool_data["file_name_prefix"].upper()
         t_suffix = self.tool_data["file_name_suffix"].upper()
-
-        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".").replace(".", "-")
-        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".").replace(".", "-")
-        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".").replace(".", "-")
+        name = self.tool_size_from_geom_catalogue.replace(".", "-")
+        d = self.clear_str_from_trailing_zeros(str(self.get_cutter_diam()), sep=".").replace(".", "-")
+        l1 = self.clear_str_from_trailing_zeros(str(self.get_insert_length()), sep=".").replace(".", "-")
+        l2 = self.clear_str_from_trailing_zeros(str(self.get_full_tool_length()), sep=".").replace(".", "-")
 
         t_name = (
             f"{t_prefix}"
-            f"D{d}"
+            f"{name}"
+            f"_D{d}"
             f"_L{l1}"
             f"_L{l2}"
             f"{t_suffix}"
@@ -96,12 +155,14 @@ class EndMill(BaseTool):
 
     def create_file_name(self):
 
-        d = self.clear_str_from_trailing_zeros(str(self.tool_data["CUTTER_DIAM"]), sep=".")
-        l1 = self.clear_str_from_trailing_zeros(str(self.tool_data["FLUTE_LENGTH"]), sep=".")
-        l2 = self.clear_str_from_trailing_zeros(str(self.tool_data["LENGTH"]), sep=".")
+        name = self.tool_size_from_geom_catalogue
+        d = self.clear_str_from_trailing_zeros(str(self.get_cutter_diam()), sep=".")
+        l1 = self.clear_str_from_trailing_zeros(str(self.get_insert_length()), sep=".")
+        l2 = self.clear_str_from_trailing_zeros(str(self.get_full_tool_length()), sep=".")
 
         t_name = (
-            f"D{d}"
+            f"{name}"
+            f"_D{d}"
             f"_L{l1}"
             f"_L{l2}"
         )
@@ -113,12 +174,24 @@ class EndMill(BaseTool):
     def calc_feed_rate(self, key_iso_material, RPM, fin_or_rough) -> float:
         try:
             feed_multiplier = self.finishing_roughing_options[fin_or_rough]["feed_rate_multiplier"]
-            F = self.catalog_cut_data[key_iso_material][config.key_f][self.tool_data["cut_data_diam_group"]]
-            F *= feed_multiplier
+            teeth = self.catalog_tool_geometry[self.tool_size_from_geom_catalogue]["feathers_num"]
+            Fz = self.catalog_cut_data[key_iso_material][config.key_fz][self.tool_data["cut_data_diam_group"]]
+            F = Fz * feed_multiplier * teeth * RPM
             return round(F, ndigits=config.NDIGITS_FEED)
         except:
             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
+
+    def calc_feed_per_unit(self, key_iso_material, fin_or_rough: str) -> float:
+        try:
+            feed_multiplier = self.finishing_roughing_options[fin_or_rough]["feed_rate_multiplier"]
+            Fz = self.catalog_cut_data[key_iso_material][config.key_fz][self.tool_data["cut_data_diam_group"]]
+            Fz = Fz * feed_multiplier
+            return round(Fz, ndigits=config.NDIGITS_FEED)
+        except:
+            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+            return 0
+
 
 
     def set_xml_body_tool_params(self) -> str:
@@ -130,20 +203,21 @@ class EndMill(BaseTool):
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="LENGTH_UNITS" Value="{self.tool_data["LENGTH_UNITS"]}"/>
+            <MfgParam Name="TOOL_MATERIAL" Value="{self.tool_data["TOOL_MATERIAL"]}"/>
+            <MfgParam Name="NUM_OF_TEETH" Value="{self.tool_data["NUM_OF_TEETH"]}"/>
+            <MfgParam Name="INSERT_LENGTH" Value="{self.insert_length}"/>
+            <MfgParam Name="END_OFFSET" Value="{self.end_offset}"/>
             <MfgParam Name="CUTTER_DIAM" Value="{self.tool_data["CUTTER_DIAM"]}"/>
             <MfgParam Name="LENGTH" Value="{self.tool_data["len_out_of_holder"]}"/>
-            <MfgParam Name="NUM_OF_TEETH" Value="{self.tool_data["NUM_OF_TEETH"]}"/>
-            <MfgParam Name="TOOL_MATERIAL" Value="{self.tool_data["TOOL_MATERIAL"]}"/>
+            <MfgParam Name="HOLDER_DIA" Value="{self.tool_data["HOLDER_DIA"]}"/>
+            <MfgParam Name="HOLDER_LEN" Value="{self.tool_data["HOLDER_LEN"]}"/>
             <MfgParam Name="GAUGE_X_LENGTH" Value="{self.tool_data["GAUGE_X_LENGTH"]}"/>
             <MfgParam Name="GAUGE_Z_LENGTH" Value="{self.tool_data["GAUGE_Z_LENGTH"]}"/>
             <MfgParam Name="COMP_OVERSIZE" Value="{self.tool_data["COMP_OVERSIZE"]}"/>
             <MfgParam Name="TOOL_LONG_FLAG" Value="{self.tool_data["TOOL_LONG_FLAG"]}"/>
-            <MfgParam Name="HOLDER_DIA" Value="{self.tool_data["HOLDER_DIA"]}"/>
-            <MfgParam Name="HOLDER_LEN" Value="{self.tool_data["HOLDER_LEN"]}"/>
             <MfgParam Name="COOLANT_OPTION" Value="{self.tool_data["COOLANT_OPTION"]}"/>
             <MfgParam Name="COOLANT_PRESSURE" Value="{self.tool_data["COOLANT_PRESSURE"]}"/>
             <MfgParam Name="SPINDLE_SENSE" Value="{self.tool_data["SPINDLE_SENSE"]}"/>
-            <MfgParam Name="FLUTE_LENGTH" Value="{self.tool_data["FLUTE_LENGTH"]}"/>
             <MfgParam Name="TOOL_COMMENT" Value="{self.tool_data["TOOL_COMMENT"]}"/>
     """
         logger.debug(f"xml_tool_params generated...")
@@ -168,7 +242,7 @@ class EndMill(BaseTool):
                     <MfgParam Name="TOOL_SPINDLE_RPM" Unit="rev_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_SPINDLE_RPM"]}"/>
                     <MfgParam Name="TOOL_SURFACE_SPEED" Unit="m_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_SURFACE_SPEED"]}"/>
                     <MfgParam Name="TOOL_FEED_RATE" Unit="mm_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_FEED_RATE"]}"/>
-                    <MfgParam Name="TOOL_FEED_PER_UNIT" Unit="mm_per_tooth" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_FEED_PER_UNIT"]}"/>
+                    <MfgParam Name="TOOL_FEED_PER_UNIT" Unit="mm_per_tooth" Value="{self.get_thread_step()}"/>
                     <MfgParam Name="TOOL_AXIAL_DEPTH" Unit="mm" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_AXIAL_DEPTH"]}"/>
                     <MfgParam Name="TOOL_RADIAL_DEPTH" Unit="mm" Value="{self.tool_data["cut_data"][mat_iso_name]["roughing"]["TOOL_RADIAL_DEPTH"]}"/>
                 </Technology>
@@ -179,7 +253,7 @@ class EndMill(BaseTool):
                     <MfgParam Name="TOOL_SPINDLE_RPM" Unit="rev_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_SPINDLE_RPM"]}"/>
                     <MfgParam Name="TOOL_SURFACE_SPEED" Unit="m_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_SURFACE_SPEED"]}"/>
                     <MfgParam Name="TOOL_FEED_RATE" Unit="mm_per_min" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_FEED_RATE"]}"/>
-                    <MfgParam Name="TOOL_FEED_PER_UNIT" Unit="mm_per_tooth" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_FEED_PER_UNIT"]}"/>
+                    <MfgParam Name="TOOL_FEED_PER_UNIT" Unit="mm_per_tooth" Value="{self.get_thread_step()}"/>
                     <MfgParam Name="TOOL_AXIAL_DEPTH" Unit="mm" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_AXIAL_DEPTH"]}"/>
                     <MfgParam Name="TOOL_RADIAL_DEPTH" Unit="mm" Value="{self.tool_data["cut_data"][mat_iso_name]["finishing"]["TOOL_RADIAL_DEPTH"]}"/>
                 </Technology>

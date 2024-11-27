@@ -10,6 +10,17 @@
     "RPMX": 60000,
     "unknown": 0.00
   },
+  "T05-TS077": {
+    "holder_order_no": "MM S-A-L110-C08-T05-C",
+    "holder_body_diam": 8.00,
+    "lowering_diam": 4.50,
+    "len_to_lowering_start": 10.0,
+    "len_to_lowering_end": 60.0,
+    "holder_full_len": 110.00,
+    "coolant_through_body": 0,
+    "RPMX": 30600,
+    "unknown": 0.07
+  },
   "T05": {
     "holder_order_no": "MM S-A-L110-C08-T05-C",
     "holder_body_diam": 8.00,

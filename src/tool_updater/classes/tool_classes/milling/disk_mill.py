@@ -43,7 +43,8 @@ class DiskOtreznoi(BaseTool):
         "iso_H": 1,
     }
 
-    path_to_holder_geometry_catalog = r"/tool_updater/catalogs/milling/otrez_disk\Iscar\holders_for_SGSF.json"
+    # path_to_holder_geometry_catalog = r"/tool_updater/catalogs/milling/otrez_disk\Iscar\holders_for_SGSF.json"
+    path_to_holder_geometry_catalog = r"C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\otrez_disk\Iscar\holders_for_SGSF.json"
 
     def __init__(self,
                  tool_size_from_geom_catalogue: str,
@@ -195,6 +196,7 @@ class DiskOtreznoi(BaseTool):
         w = self.clear_str_from_trailing_zeros(self.get_tool_cutter_width_from_complex_size(), sep=".")
         r = self.clear_str_from_trailing_zeros(self.get_tool_corner_radius_from_complex_size(), sep=".")
         l1 = self.clear_str_from_trailing_zeros(str(self.calc_len_out_of_holder()), sep=".")
+        # r = self.get_tool_corner_radius_from_complex_size()
         l2 = self.clear_str_from_trailing_zeros(str(self.get_full_tool_length()), sep=".")
 
         if r != "0":

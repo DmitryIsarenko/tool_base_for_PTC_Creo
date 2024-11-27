@@ -7,7 +7,7 @@ from tool_updater.classes.tool_classes.base_tool import BaseTool
 logger = logging.getLogger(__name__)
 
 
-class DiskOtreznoi(BaseTool):
+class GribMill(BaseTool):
     # MANUAL TOOL DATA
     tool_material_manual = "Carbide inserts"
     tool_type = "SIDE_MILLING"
@@ -24,7 +24,7 @@ class DiskOtreznoi(BaseTool):
     }
 
     key_ae = "Ae"
-    key_holder_size = "DCONMS"
+    key_holder_size = "holder_name"
 
     axial_depth_modifiyers = {
         "iso_P": 1,
@@ -43,7 +43,7 @@ class DiskOtreznoi(BaseTool):
         "iso_H": 1,
     }
 
-    path_to_holder_geometry_catalog = r"/tool_updater/catalogs/milling/otrez_disk\Iscar\holders_for_SGSF.json"
+    path_to_holder_geometry_catalog = r"C:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\gribkovie\Iscar\MultiMaster\holders_for_MultiMaster.json"
 
     def __init__(self,
                  tool_size_from_geom_catalogue: str,
@@ -92,9 +92,12 @@ class DiskOtreznoi(BaseTool):
     def get_tool_corner_radius_from_complex_size(self):
         return self.complex_size_name.split(sep=" ")[2].replace("R", "")
 
+    def get_tool_corner_chamfer_from_complex_size(self):
+        return self.complex_size_name.split(sep=" ")[3].replace("C", "")
+
     def get_tool_shank_diam(self):
         hol_size = self.get_tool_holder_size()
-        return self.catalog_holder_geometry[hol_size][config.key_shank_diam]
+        return self.catalog_holder_geometry[hol_size]["lowering_diam"]
 
     def get_tool_diam_float(self):
         return float(self.get_tool_flute_diam_from_complex_size())
@@ -107,8 +110,7 @@ class DiskOtreznoi(BaseTool):
 
     def calc_radial_depth(self, key_iso_material):
         try:
-            return self.catalog_cut_data[key_iso_material][config.key_ae][
-                self.get_tool_cutter_width_from_complex_size()]
+            return self.catalog_tool_geometry[self.complex_size_name]["max_cut_depth"]
         except:
             return 0
 
@@ -118,25 +120,18 @@ class DiskOtreznoi(BaseTool):
     #     return l
 
     def get_tool_holder_size(self):
-        hol_size = str(self.catalog_tool_geometry[self.complex_size_name][self.key_holder_size])
-        while len(hol_size.split(sep=".")[1]) < 2:
-            hol_size += "0"
+        hol_size = self.catalog_tool_geometry[self.complex_size_name][self.key_holder_size]
         return hol_size
 
     def get_full_tool_length(self) -> float:
         hol_size = self.get_tool_holder_size()
-        hol_len = self.catalog_holder_geometry[hol_size]["holder_len"]
+        hol_len = self.catalog_holder_geometry[hol_size]["holder_full_len"]
         return hol_len
 
     def calc_len_out_of_holder(self):
-        try:
-            hol_size = self.get_tool_holder_size()
-            hol_body_min_len = self.catalog_holder_geometry[hol_size]["holder_min_len"]
-            hol_body_len = self.catalog_holder_geometry[hol_size]["holder_len"]
-            len_out_of_holder = max(hol_body_len / 2, hol_body_min_len)
-            return len_out_of_holder
-        except:
-            return 0
+        hol_size = self.get_tool_holder_size()
+        hol_body_min_len = self.catalog_holder_geometry[hol_size]["len_to_lowering_start"]
+        return hol_body_min_len
 
     def calc_feed_per_unit(self, key_iso_material, fin_or_rough):
         try:
@@ -164,11 +159,33 @@ class DiskOtreznoi(BaseTool):
         d = self.clear_str_from_trailing_zeros(self.tool_data["CUTTER_DIAM"], sep=".").replace(".", "-")
         w = self.clear_str_from_trailing_zeros(self.get_tool_cutter_width_from_complex_size(), sep=".").replace(".",
                                                                                                                 "-")
-        r = self.clear_str_from_trailing_zeros(self.get_tool_corner_radius_from_complex_size(), sep=".").replace(".",
+        # r = self.clear_str_from_trailing_zeros(self.get_tool_corner_radius_from_complex_size(), sep=".").replace(".",
+        #                                                                                                          "-")
+        r = self.get_tool_corner_radius_from_complex_size().replace(".", "-")
+        c = self.clear_str_from_trailing_zeros(self.get_tool_corner_chamfer_from_complex_size(), sep=".").replace(".",
                                                                                                                  "-")
         l1 = self.clear_str_from_trailing_zeros(str(self.calc_len_out_of_holder()), sep=".").replace(".", "-")
         l2 = self.clear_str_from_trailing_zeros(str(self.get_full_tool_length()), sep=".").replace(".", "-")
-        if r != "0":
+        if r == "0" and c =="0":
+            t_name = (
+                f"{t_prefix}"
+                f"D{d}"
+                f"_W{w}"
+                f"_L{l1}"
+                f"_L{l2}"
+                f"{t_suffix}"
+            )
+        elif r == "0" and c != "0":
+            t_name = (
+                f"{t_prefix}"
+                f"D{d}"
+                f"_W{w}"
+                f"_C{c}"
+                f"_L{l1}"
+                f"_L{l2}"
+                f"{t_suffix}"
+            )
+        elif r != "0" and c == "0":
             t_name = (
                 f"{t_prefix}"
                 f"D{d}"
@@ -183,6 +200,8 @@ class DiskOtreznoi(BaseTool):
                 f"{t_prefix}"
                 f"D{d}"
                 f"_W{w}"
+                f"_R{r}"
+                f"_C{c}"
                 f"_L{l1}"
                 f"_L{l2}"
                 f"{t_suffix}"
@@ -193,11 +212,28 @@ class DiskOtreznoi(BaseTool):
     def create_file_name(self):
         d = self.clear_str_from_trailing_zeros(self.tool_data["CUTTER_DIAM"], sep=".")
         w = self.clear_str_from_trailing_zeros(self.get_tool_cutter_width_from_complex_size(), sep=".")
-        r = self.clear_str_from_trailing_zeros(self.get_tool_corner_radius_from_complex_size(), sep=".")
+        # r = self.clear_str_from_trailing_zeros(self.get_tool_corner_radius_from_complex_size(), sep=".")
+        r = self.get_tool_corner_radius_from_complex_size()
+        c = self.clear_str_from_trailing_zeros(self.get_tool_corner_chamfer_from_complex_size(), sep=".")
         l1 = self.clear_str_from_trailing_zeros(str(self.calc_len_out_of_holder()), sep=".")
         l2 = self.clear_str_from_trailing_zeros(str(self.get_full_tool_length()), sep=".")
 
-        if r != "0":
+        if r == "0" and c =="0":
+            t_name = (
+                f"D{d}"
+                f"_W{w}"
+                f"_L{l1}"
+                f"_L{l2}"
+            )
+        elif r == "0" and c != "0":
+            t_name = (
+                f"D{d}"
+                f"_W{w}"
+                f"_C{c}"
+                f"_L{l1}"
+                f"_L{l2}"
+            )
+        elif r != "0" and c == "0":
             t_name = (
                 f"D{d}"
                 f"_W{w}"
@@ -209,6 +245,8 @@ class DiskOtreznoi(BaseTool):
             t_name = (
                 f"D{d}"
                 f"_W{w}"
+                f"_R{r}"
+                f"_C{c}"
                 f"_L{l1}"
                 f"_L{l2}"
             )
@@ -225,15 +263,14 @@ class DiskOtreznoi(BaseTool):
             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
-
     def get_tool_teeth_num(self):
         try:
             return self.catalog_tool_geometry[self.complex_size_name][config.key_num_of_teeth]
         except:
             return 0
 
-    def calc_nut_diam(self) -> int:
-        return self.get_tool_shank_diam() + 20
+    # def calc_nut_diam(self) -> int:
+    #     return self.get_tool_shank_diam() + 20
 
     def set_xml_body_tool_params(self) -> str:
         xml_part_str = f"""\
@@ -244,19 +281,24 @@ class DiskOtreznoi(BaseTool):
             <Attr DataType="boolean" Name="SketchTool" Value="false"/>
             <Attr DataType="boolean" Name="ToolByRef" Value="false"/>
             <MfgParam Name="LENGTH_UNITS" Value="{self.tool_data["LENGTH_UNITS"]}"/>
+
             <MfgParam Name="CUTTER_DIAM" Value="{self.tool_data["CUTTER_DIAM"]}"/>
             <MfgParam Name="CORNER_RADIUS" Value="{self.tool_data["CORNER_RADIUS"]}"/>
             <MfgParam Name="CUTTER_WIDTH" Value="{self.tool_data["CUTTER_WIDTH"]}"/>
+
             <MfgParam Name="SHANK_DIAM" Value="{self.tool_data["SHANK_DIAM"]}"/>
             <MfgParam Name="LENGTH" Value="{self.tool_data["len_out_of_holder"]}"/>
+
             <MfgParam Name="NUM_OF_TEETH" Value="{self.tool_data["NUM_OF_TEETH"]}"/>
             <MfgParam Name="TOOL_MATERIAL" Value="{self.tool_data["TOOL_MATERIAL"]}"/>
+
+            <MfgParam Name="HOLDER_DIA" Value="{self.tool_data["HOLDER_DIA"]}"/>
+            <MfgParam Name="HOLDER_LEN" Value="{self.tool_data["HOLDER_LEN"]}"/>
+ 
             <MfgParam Name="GAUGE_X_LENGTH" Value="{self.tool_data["GAUGE_X_LENGTH"]}"/>
             <MfgParam Name="GAUGE_Z_LENGTH" Value="{self.tool_data["GAUGE_Z_LENGTH"]}"/>
             <MfgParam Name="COMP_OVERSIZE" Value="{self.tool_data["COMP_OVERSIZE"]}"/>
             <MfgParam Name="TOOL_LONG_FLAG" Value="{self.tool_data["TOOL_LONG_FLAG"]}"/>
-            <MfgParam Name="HOLDER_DIA" Value="{self.tool_data["HOLDER_DIA"]}"/>
-            <MfgParam Name="HOLDER_LEN" Value="{self.tool_data["HOLDER_LEN"]}"/>
             <MfgParam Name="COOLANT_OPTION" Value="{self.tool_data["COOLANT_OPTION"]}"/>
             <MfgParam Name="COOLANT_PRESSURE" Value="{self.tool_data["COOLANT_PRESSURE"]}"/>
             <MfgParam Name="SPINDLE_SENSE" Value="{self.tool_data["SPINDLE_SENSE"]}"/>

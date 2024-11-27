@@ -1,5 +1,6 @@
 
 "T04": {"holder_order_no": "MM S-A-L060/20-C08-T04-C"  , "holder_body_diam": 8.00, "lowering_diam": 5.80, "len_to_lowering_start": 16.90, "len_to_lowering_end": 20.0, "holder_full_len": 60.00, "coolant_through_body": 0, "RPMX": 60000, "unknown": 0.00},
+"T05-TS077": {"holder_order_no": "MM S-A-L110-C08-T05-C"     , "holder_body_diam": 8.00, "lowering_diam": 4.50, "len_to_lowering_start": 10.0, "len_to_lowering_end": 60.0, "holder_full_len": 110.00, "coolant_through_body": 0, "RPMX": 30600, "unknown": 0.07},
 "T05": {"holder_order_no": "MM S-A-L110-C08-T05-C"     , "holder_body_diam": 8.00, "lowering_diam": 7.60, "len_to_lowering_start": 57.90, "len_to_lowering_end": 60.0, "holder_full_len": 110.00, "coolant_through_body": 0, "RPMX": 30600, "unknown": 0.07},
 "T06": {"holder_order_no": "MM S-A-L150-C10-T06-C"     , "holder_body_diam": 10.00, "lowering_diam": 9.60, "len_to_lowering_start": 98.50, "len_to_lowering_end": 100.0, "holder_full_len": 150.00, "coolant_through_body": 0, "RPMX": 16620, "unknown": 0.00},
 "T08": {"holder_order_no": "MM S-A-L130-C12-T08-C"     , "holder_body_diam": 12.00, "lowering_diam": 11.60, "len_to_lowering_start": 78.60, "len_to_lowering_end": 80.0, "holder_full_len": 130.00, "coolant_through_body": 0, "RPMX": 27960, "unknown": 0.19},
