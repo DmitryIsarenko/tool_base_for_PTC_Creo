@@ -1,7 +1,7 @@
 from src.tool_updater import config
 import logging
 
-from tool_updater.classes.tool_classes.base_tool import BaseTool
+from src.tool_updater.classes.tool_classes.base_tool import BaseTool
 
 logger = logging.getLogger(__name__)
 
@@ -179,7 +179,7 @@ class ThreadMill(BaseTool):
             F = Fz * feed_multiplier * teeth * RPM
             return round(F, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+            # logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
     def calc_feed_per_unit(self, key_iso_material, fin_or_rough: str) -> float:
@@ -189,7 +189,7 @@ class ThreadMill(BaseTool):
             Fz = Fz * feed_multiplier
             return round(Fz, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
 
@@ -220,7 +220,7 @@ class ThreadMill(BaseTool):
             <MfgParam Name="SPINDLE_SENSE" Value="{self.tool_data["SPINDLE_SENSE"]}"/>
             <MfgParam Name="TOOL_COMMENT" Value="{self.tool_data["TOOL_COMMENT"]}"/>
     """
-        logger.debug(f"xml_tool_params generated...")
+        logger.debug(f"{self.tool_size_from_geom_catalogue} - xml_tool_params generated...")
         return xml_part_str
 
 

@@ -7,7 +7,7 @@ from src.tool_updater.default_tool_dict import default_tool_dict
 
 import logging
 
-from tool_updater.config import key_f, key_fn, key_fz
+from src.tool_updater.config import key_f, key_fn, key_fz
 
 logger = logging.getLogger(__name__)
 
@@ -135,7 +135,7 @@ class BaseTool:
                 t_name += "0"
             return self.catalog_geom[t_name][config.key_body_len]
         except:
-            logger.warning(f"{self.tool_data["tool_name_str"]} - Tool len not found")
+            # logger.warning(f"{self.tool_data["tool_name_str"]} - Tool len not found")
             return 0
 
     def get_tool_flute_length(self) -> float:
@@ -146,7 +146,7 @@ class BaseTool:
                 t_name += "0"
             return self.catalog_geom[t_name][config.key_flute_len]
         except:
-            logger.warning(f"{self.tool_data["tool_name_str"]} - Tool flute len not found")
+            # logger.warning(f"{self.tool_data["tool_name_str"]} - Tool flute len not found")
             return 0
 
     def get_tool_comment(self) -> str:
@@ -154,7 +154,7 @@ class BaseTool:
             t_name = self.tool_data["tool_name_for_geom_catalogue"]
             return self.catalog_geom[t_name][config.key_order_no]
         except:
-            logger.warning(f"{self.tool_data["tool_name_str"]} - Tool flute len not found")
+            # logger.warning(f"{self.tool_data["tool_name_str"]} - Tool flute len not found")
             return ""
 
     def get_tool_diam_float(self):
@@ -191,7 +191,7 @@ class BaseTool:
                 vc_data = round(vc_data, ndigits=config.NDIGITS_SURFACE_SPEED)
                 return vc_data
         except KeyError:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - Vc not found")
+            # logger.critical(f"{self.tool_data["tool_name_str"]} - Vc not found")
             return 0
 
     #
@@ -224,7 +224,7 @@ class BaseTool:
 
             return suitable_grp[-1]
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - Diam group not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - Diam group not calculated")
             return "None"
 
     #
@@ -269,7 +269,7 @@ class BaseTool:
             rpm = 1000 * Vc / (pi * self.tool_data["tool_diam_float"])
             return round(rpm, ndigits=config.NDIGITS_SPINDLE)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - RPM not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - RPM not calculated")
             return 0
 
     def calc_feed_per_unit(self, key_iso_material, fin_or_rough: str) -> float:
@@ -280,7 +280,7 @@ class BaseTool:
             fz = F / RPM / self.tool_data["NUM_OF_TEETH"] * feed_multiplier
             return round(fz, ndigits=config.NDIGITS_FEED_PER_UNIT)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
             return 0
 
     def calc_feed_rate(self, key_iso_material, RPM, fin_or_rough) -> float:
@@ -290,7 +290,7 @@ class BaseTool:
             Fn = Fn * RPM * feed_multiplier
             return round(Fn, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
     def calc_axial_depth(self, key_iso_material) -> float:
@@ -298,7 +298,7 @@ class BaseTool:
             axial_depth = float(self.tool_data["CUTTER_DIAM"]) * self.axial_depth_modifiyers[key_iso_material]
             return round(axial_depth, ndigits=config.NDIGITS_AXIAL_FEED)
         except:
-            logger.warning(f"{self.tool_data["tool_name_str"]} - axial depth not calculated")
+#             logger.warning(f"{self.tool_data["tool_name_str"]} - axial depth not calculated")
             return 0
 
     def calc_radial_depth(self, key_iso_material):
@@ -306,7 +306,7 @@ class BaseTool:
             radial_depth = float(self.tool_data["CUTTER_DIAM"]) * self.radial_depth_modifiyers[key_iso_material]
             return round(radial_depth, ndigits=config.NDIGITS_RADIAL_FEED)
         except:
-            logger.warning(f"{self.tool_data["tool_name_str"]} - radial depth not calculated")
+#             logger.warning(f"{self.tool_data["tool_name_str"]} - radial depth not calculated")
             return 0
 
     def calc_nut_diam(self) -> int:
@@ -331,7 +331,7 @@ class BaseTool:
             length = round(float(self.tool_data["FLUTE_LENGTH"]) + float(self.tool_data["CUTTER_DIAM"]), ndigits=0, )
             return length
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - nut diam not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - nut diam not calculated")
             return 0
 
     #
@@ -548,7 +548,7 @@ class BaseTool:
     <DateTime>{self.DATETIME}</DateTime>
     <ApplicationInfo AppName="Creo" AppVersion="8.0.11.0" FtVersion="360051" Language="russian" MdlVersion="2012"/>
 """
-        logger.debug(f"xml_head generated...")
+        logger.debug(f"{self.tool_data["tool_name_str"]} - xml_head generated...")
         return xml_part_str
 
     def set_xml_body_tool_params(self) -> str:
@@ -576,7 +576,7 @@ class BaseTool:
             <MfgParam Name="FLUTE_LENGTH" Value="{self.tool_data["FLUTE_LENGTH"]}"/>
             <MfgParam Name="TOOL_COMMENT" Value="{self.tool_data["TOOL_COMMENT"]}"/>
 """
-        logger.debug(f"xml_tool_params generated...")
+        logger.debug(f"{self.tool_data["tool_name_str"]} - xml_tool_params generated...")
         return xml_part_str
 
     def set_xml_body_tool_cut_data(self) -> str:
@@ -616,7 +616,7 @@ class BaseTool:
 """
             total_string += xml_part_str
 
-        logger.debug(f"xml_tool_cut_data generated...")
+        logger.debug(f"{self.tool_data["tool_name_str"]} - xml_tool_cut_data generated...")
         return total_string
 
     def set_xml_bom_components(self) -> str:
@@ -628,7 +628,7 @@ class BaseTool:
                 <BOMComponent Comments=" " Name="common" Quantity="1" Type="GENERAL"/>
             </BOM>
 """
-        logger.debug(f"xml_BOM_components generated...")
+        logger.debug(f"{self.tool_data["tool_name_str"]} - xml_BOM_components generated...")
         return xml_part_str
 
     def set_xml_tail(self) -> str:
@@ -642,5 +642,5 @@ class BaseTool:
     </ToolingSetup>
 </MfgSetupDocument>
 """
-        logger.debug(f"xml_tail generated...")
+        logger.debug(f"{self.tool_data["tool_name_str"]} - xml_tail generated...")
         return xml_part_str

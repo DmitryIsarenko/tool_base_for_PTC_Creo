@@ -1,7 +1,7 @@
 from src.tool_updater import config
 import logging
 
-from tool_updater.classes.tool_classes.base_tool import BaseTool
+from src.tool_updater.classes.tool_classes.base_tool import BaseTool
 
 logger = logging.getLogger(__name__)
 
@@ -118,7 +118,7 @@ class Tap(BaseTool):
             F = Fn * RPM
             return round(F, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+            # logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
     def calc_feed_per_unit(self, key_iso_material, fin_or_rough: str) -> float:
@@ -126,7 +126,7 @@ class Tap(BaseTool):
             Fn = self.calc_thread_pitch()
             return round(Fn, ndigits=config.NDIGITS_FEED_PER_UNIT)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
             return 0
 
     def calc_thread_pitch(self):
@@ -202,7 +202,7 @@ class Tap(BaseTool):
             <MfgParam Name="SPINDLE_SENSE" Value="{self.tool_data["SPINDLE_SENSE"]}"/>
             <MfgParam Name="TOOL_COMMENT" Value="{self.tool_data["TOOL_COMMENT"]}"/>
     """
-        logger.debug(f"xml_tool_params generated...")
+        logger.debug(f"{self.tool_size_from_geom_catalogue} - xml_tool_params generated...")
         return xml_part_str
 
     def set_xml_body_tool_cut_data(self):
@@ -238,5 +238,5 @@ class Tap(BaseTool):
         """
             total_string += xml_part_str
 
-        logger.debug(f"xml_tool_cut_data generated...")
+        logger.debug(f"{self.tool_size_from_geom_catalogue} - xml_tool_cut_data generated...")
         return total_string

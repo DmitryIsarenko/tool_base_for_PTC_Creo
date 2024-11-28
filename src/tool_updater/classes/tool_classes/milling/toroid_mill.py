@@ -1,7 +1,7 @@
 from src.tool_updater import config
 import logging
 
-from tool_updater.classes.tool_classes.base_tool import BaseTool
+from src.tool_updater.classes.tool_classes.base_tool import BaseTool
 
 logger = logging.getLogger(__name__)
 
@@ -128,7 +128,7 @@ class ToroidMill(BaseTool):
             F *= feed_multiplier
             return round(F, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+            # logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
     def set_xml_body_tool_params(self) -> str:

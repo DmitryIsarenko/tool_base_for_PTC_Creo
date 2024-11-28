@@ -1,21 +1,22 @@
 import logging
 
-from tool_updater.classes.tool_classes.axial.centerdrill import CenterDrill
-from tool_updater.classes.tool_classes.axial.counterbore import CounterBore
-from tool_updater.classes.tool_classes.axial.drill import Drill
-from tool_updater.classes.tool_classes.axial.countersink import CounterSink
-from tool_updater.classes.tool_classes.axial.reamer import Reamer
-from tool_updater.classes.tool_classes.axial.tap import Tap
-from tool_updater.classes.tool_classes.base_tool import BaseTool
-from tool_updater.classes.tool_classes.milling.chamfer_mill import ChamferMill
-from tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
-from tool_updater.classes.tool_classes.milling.endmill import EndMill
-from tool_updater.classes.tool_classes.milling.grib_mill import GribMill
-from tool_updater.classes.tool_classes.milling.sphere_mill import BallMill
-from tool_updater.classes.tool_classes.milling.threadmill import ThreadMill
-from tool_updater.classes.tool_classes.milling.toroid_mill import ToroidMill
-from tool_updater.classes.tool_classes.milling.vnutr_rad_mill import VnutrRadMill
-from tool_updater.classes.tool_generator import ToolGenerator
+from src.tool_updater.classes.tool_classes.base_tool import BaseTool
+from src.tool_updater.classes.tool_classes.axial.centerdrill import CenterDrill
+from src.tool_updater.classes.tool_classes.axial.counterbore import CounterBore
+from src.tool_updater.classes.tool_classes.axial.drill import Drill
+from src.tool_updater.classes.tool_classes.axial.countersink import CounterSink
+from src.tool_updater.classes.tool_classes.axial.reamer import Reamer
+from src.tool_updater.classes.tool_classes.axial.tap import Tap
+from src.tool_updater.classes.tool_classes.milling.chamfer_mill import ChamferMill
+from src.tool_updater.classes.tool_classes.milling.disk_mill import DiskOtreznoi
+from src.tool_updater.classes.tool_classes.milling.endmill import EndMill
+from src.tool_updater.classes.tool_classes.milling.grib_mill import GribMill
+from src.tool_updater.classes.tool_classes.milling.sphere_mill import BallMill
+from src.tool_updater.classes.tool_classes.milling.threadmill import ThreadMill
+from src.tool_updater.classes.tool_classes.milling.toroid_mill import ToroidMill
+from src.tool_updater.classes.tool_classes.milling.vnutr_rad_mill import VnutrRadMill
+from src.tool_updater.classes.tool_generator import ToolGenerator
+
 
 logger = logging.getLogger("src")
 # logger = logging.getLogger(__name__)
@@ -45,24 +46,22 @@ def main():
     blok_rastoch_
     """
 
-    # ToolGenerator.create_tools(
-    #     tool_class=BallMill,
-    #     file_name_prefix="freza_sfera_",
-    #     target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
-    #     debug_mode=0,
-        # debug_mode=1,
-        # debug_mode=2,
+    ToolGenerator.create_tools(
+        tool_class=BallMill,
+        file_name_prefix="freza_sfera_",
+        target_path=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\база инструмента\target_path",
+        debug_mode=0,
 
-        # teeth_num=2,
-        # file_name_suffix="_UA100-B2",
-        # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\ballnose_mills\Gesac\UA100-B2\UA100-B2.json",
-        # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\ballnose_mills\Gesac\UA100-B2\UA100-B2_cut_data.json",
+        teeth_num=2,
+        file_name_suffix="_UA100-B2",
+        path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\ballnose_mills\Gesac\UA100-B2\UA100-B2.json",
+        path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\milling\ballnose_mills\Gesac\UA100-B2\UA100-B2_cut_data.json",
 
         # teeth_num=4,
         # file_name_suffix="_SS600-B4",
         # path_to_catalog_geometry=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\ballnose_mills\Gesac\SS600-B4/SS600-B4.json",
         # path_to_catalog_cut_data=r"c:\WORK_DIRECTORY\10_Programming\Projects\tool_base\tool_base\src\tool_updater\catalogs\ballnose_mills\Gesac\SS600-B4/SS600-B4_cut_data.json",
-    # )
+    )
 
     # ToolGenerator.create_tools(
     #     tool_class=EndMill,

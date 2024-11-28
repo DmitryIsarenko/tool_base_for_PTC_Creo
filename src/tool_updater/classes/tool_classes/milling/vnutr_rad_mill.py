@@ -2,7 +2,7 @@ from src.tool_updater import config
 from math import pi
 import logging
 
-from tool_updater.classes.tool_classes.base_tool import BaseTool
+from src.tool_updater.classes.tool_classes.base_tool import BaseTool
 
 logger = logging.getLogger(__name__)
 
@@ -99,7 +99,7 @@ class VnutrRadMill(BaseTool):
             fz = Fz * feed_multiplier
             return round(fz, ndigits=config.NDIGITS_FEED_PER_UNIT)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
+            # logger.critical(f"{self.tool_data["tool_name_str"]} - feed per unit not calculated")
             return 0
 
     def calc_len_out_of_holder(self):
@@ -112,7 +112,7 @@ class VnutrRadMill(BaseTool):
             Fn = Fz * self.teeth_num * RPM * feed_multiplier
             return round(Fn, ndigits=config.NDIGITS_FEED)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - feed per min not calculated")
             return 0
 
     def calc_rpm(self, Vc: int | float) -> float:
@@ -120,7 +120,7 @@ class VnutrRadMill(BaseTool):
             rpm = 1000 * Vc / (pi * self.tool_data["CUTTER_DIAM"])
             return round(rpm, ndigits=config.NDIGITS_SPINDLE)
         except:
-            logger.critical(f"{self.tool_data["tool_name_str"]} - RPM not calculated")
+#             logger.critical(f"{self.tool_data["tool_name_str"]} - RPM not calculated")
             return 0
 
     def calc_axial_depth(self, key_iso_material) -> float:
@@ -204,7 +204,7 @@ class VnutrRadMill(BaseTool):
             <MfgParam Name="SPINDLE_SENSE" Value="{self.tool_data["SPINDLE_SENSE"]}"/>
             <MfgParam Name="TOOL_COMMENT" Value="{self.tool_data["TOOL_COMMENT"]}"/>
     """
-        logger.debug(f"xml_tool_params generated...")
+        logger.debug(f"{self.tool_size_from_geom_catalogue} - xml_tool_params generated...")
         return xml_part_str
 
     def set_xml_body_tool_cut_data(self):
@@ -244,5 +244,5 @@ class VnutrRadMill(BaseTool):
         """
             total_string += xml_part_str
 
-        logger.debug(f"xml_tool_cut_data generated...")
+        logger.debug(f"{self.tool_size_from_geom_catalogue} - xml_tool_cut_data generated...")
         return total_string
